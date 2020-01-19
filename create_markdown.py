@@ -2,6 +2,16 @@
 
 # traverse directory, and convert cmake files to include files for
 # use in ApprovalTests.cpp documentation
+#
+# The CMake files in this directory are intended for inclusion in 
+# ApprovalTests.cpp documentation.
+# 
+# Currently there is no way to use mdsnippets to pull
+# in files from other repos.
+# 
+# So for now, I'm copying these CMake files on to that
+# repo, converted to Markdown format, for inclusion
+# in the documentation there.
 
 import os
 
