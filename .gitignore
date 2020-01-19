@@ -1,3 +1,6 @@
-ApprovalTests.cpp/
-Catch2/
+ApprovalTests.cpp
+Catch2
+doctest
+googletest
+ut
 *.swp
