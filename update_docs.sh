@@ -4,7 +4,7 @@
 set -e
 set -o pipefail
 
-./create_markdown.py > ../ApprovalTests.cpp/doc/mdsource/include_cmake_samples.include.md
+./create_markdown.py
 pushd ../ApprovalTests.cpp
 ./run_markdown_templates.sh
 popd

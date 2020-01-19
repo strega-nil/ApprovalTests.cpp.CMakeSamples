@@ -29,16 +29,17 @@ def show_for_markdown(root, file):
     rel_path = os.path.join(root, file)
     abs_path = os.path.abspath(rel_path)
 
-    path = root.split(os.sep)
-
-    print(f'{(len(path) + 1) * "#"} {rel_path}')
-    print('\n')
-    print(f"<!-- {abs_path} -->")
-    print('\n')
-    print('```cmake')
-    with open(abs_path) as f:
-        print(f'{"".join(f.readlines())}```')
-    print('\n')
+    dir_name = os.path.normpath(root).replace('/', '_')
+    file_base_name = os.path.splitext(file)[0]
+    output_file = f'../ApprovalTests.cpp/doc/mdsource/inc_{dir_name}_{file_base_name.lower()}.include.md'
+    print(output_file)
+    with open(output_file, 'w') as s:
+        s.write('\n')
+        s.write('\n')
+        s.write('```cmake\n')
+        with open(abs_path) as f:
+            s.write(f'{"".join(f.readlines())}```')
+        s.write('\n')
 
 
 for root, dirs, files in os.walk(".", topdown=True):
