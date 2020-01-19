@@ -30,7 +30,7 @@ def show_for_markdown(root, file):
     path = root.split(os.sep)
     # print((len(path) - 1) * '---', os.path.basename(root))
 
-    print(f'{(len(path) + 2) * "#"} {rel_path}')
+    print(f'{(len(path) + 1) * "#"} {rel_path}')
     print('\n')
     print(f"<!-- {abs_path} -->")
     print('\n')
@@ -41,7 +41,9 @@ def show_for_markdown(root, file):
 
 
 # traverse root directory, and list directories as dirs and files as files
-print('# CMake files')
+print('\n')
+print('\n')
+print('## CMake files')
 print('\n')
 for root, dirs, files in os.walk(".", topdown=True):
     dirs[:] = remove_unwanted_dirs(dirs)
