@@ -48,7 +48,8 @@ def show_for_markdown(root, file):
         s.write('\n')
         s.write('```cmake\n')
         with open(abs_path) as f:
-            s.write(f'{"".join(f.readlines())}```')
+            s.write(f'{"".join(f.readlines())}')
+        s.write('```\n')
         s.write('\n')
 
 
