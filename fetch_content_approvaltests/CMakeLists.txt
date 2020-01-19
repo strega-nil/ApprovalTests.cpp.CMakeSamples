@@ -12,12 +12,9 @@ if (NOT TARGET ApprovalTests)
     # Tell the ApprovalTests CMake files that we want to use its copy of Catch2:
     set(APPROVAL_TESTS_BUILD_THIRD_PARTY_CATCH2 ON CACHE BOOL "")
 
-    # See also
-    # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-    set(APPROVAL_TESTS_BUILD_THIRD_PARTY_GOOGLE_TEST ON CACHE BOOL "") # TODO This is giving an error
-    # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-    set(APPROVAL_TESTS_BUILD_THIRD_PARTY_DOCTEST ON CACHE BOOL "")
-    set(APPROVAL_TESTS_BUILD_THIRD_PARTY_UT ON CACHE BOOL "")
+    # These are also available:
+#    set(APPROVAL_TESTS_BUILD_THIRD_PARTY_DOCTEST ON CACHE BOOL "")
+#    set(APPROVAL_TESTS_BUILD_THIRD_PARTY_UT ON CACHE BOOL "")
 
     FetchContent_MakeAvailable(ApprovalTests)
 endif ()
