@@ -15,7 +15,7 @@ add_subdirectory(
 # -------------------------------------------------------------------
 # doctest
 add_subdirectory(
-        ../../../Testing/doctest
+        ../doctest
         ${CMAKE_CURRENT_BINARY_DIR}/doctest_build
 )
 
@@ -26,7 +26,7 @@ add_subdirectory(
 # when building with Visual Studio
 set(gtest_force_shared_crt ON CACHE BOOL "" )
 add_subdirectory(
-        ../../../Testing/googletest
+        ../googletest
         ${CMAKE_CURRENT_BINARY_DIR}/googletest_build
 )
 
@@ -39,7 +39,7 @@ set(BUILD_EXAMPLES OFF CACHE BOOL "")
 set(BUILD_TESTS OFF CACHE BOOL "")
 
 add_subdirectory(
-        ../../../Testing/ut
+        ../ut
         ${CMAKE_CURRENT_BINARY_DIR}/ut_build
 )
 
