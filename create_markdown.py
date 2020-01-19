@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+# traverse directory, and convert cmake files to include files for
+# use in ApprovalTests.cpp documentation
+
 import os
 
 def remove_unwanted_dirs(dirs):
@@ -15,7 +18,6 @@ def remove_unwanted_dirs(dirs):
 
 
 def is_wanted_file(file):
-    # print(file)
     if os.path.splitext(file)[1] == '.cmake':
         return True
     if file == 'CMakeLists.txt':
@@ -28,7 +30,6 @@ def show_for_markdown(root, file):
     abs_path = os.path.abspath(rel_path)
 
     path = root.split(os.sep)
-    # print((len(path) - 1) * '---', os.path.basename(root))
 
     print(f'{(len(path) + 1) * "#"} {rel_path}')
     print('\n')
@@ -40,18 +41,9 @@ def show_for_markdown(root, file):
     print('\n')
 
 
-# traverse root directory, and list directories as dirs and files as files
-print('\n')
-print('\n')
-print('## CMake files')
-print('\n')
 for root, dirs, files in os.walk(".", topdown=True):
     dirs[:] = remove_unwanted_dirs(dirs)
-    #path = root.split(os.sep)
-    # print((len(path) - 1) * '---', os.path.basename(root))
     for file in files:
         if not is_wanted_file(file):
             continue
-        # print(len(path) * '---', file)
-        # print(is_wanted_file(file))
         show_for_markdown(root, file)
