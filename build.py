@@ -22,7 +22,7 @@ for dir in os.listdir(os.getcwd()):
         output = e.output
         success = False
 
-    print(output)
+    print(output.decode())
     if not success:
         exit(1)
 
