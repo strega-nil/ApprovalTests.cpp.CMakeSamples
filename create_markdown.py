@@ -7,7 +7,9 @@
 # ApprovalTests.cpp documentation.
 # 
 # Currently there is no way to use mdsnippets to pull
-# in files from other repos.
+# in multiple files of the same name from other repos,
+# and no way to tell it to use cmake syntax for CMakeLists.txt.
+# files.
 # 
 # So for now, I'm copying these CMake files on to that
 # repo, converted to Markdown format, for inclusion
