@@ -40,6 +40,7 @@ def is_wanted_file(file):
 def show_for_markdown(root, file):
     rel_path = os.path.join(root, file)
     abs_path = os.path.abspath(rel_path)
+    url_to_file = F'https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/{rel_path}'
 
     dir_name = os.path.normpath(root).replace('/', '_')
     file_base_name = os.path.splitext(file)[0]
@@ -52,6 +53,7 @@ def show_for_markdown(root, file):
         with open(abs_path) as f:
             s.write(f'{"".join(f.readlines())}')
         s.write('```\n')
+        s.write(F"<sup><a href='{url_to_file}' title='File snippet was copied from'>snippet source</a></sup>\n")
         s.write('\n')
 
 
