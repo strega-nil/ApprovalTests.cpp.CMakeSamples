@@ -24,6 +24,9 @@ for dir in os.listdir(os.getcwd()):
 
     print(output.decode())
     if not success:
+        print(F"ERROR {dir} build failed")
         exit(1)
 
     os.chdir('..')
+
+print(F"Success!")
