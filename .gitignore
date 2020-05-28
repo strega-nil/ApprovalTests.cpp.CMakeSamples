@@ -1,6 +1,8 @@
 ApprovalTests.cpp
+boost
 Catch2
 doctest
+fmt
 googletest
 ut
 *.swp

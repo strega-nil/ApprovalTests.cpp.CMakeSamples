@@ -5,6 +5,11 @@ project(develop_approvaltests)
 enable_testing()
 
 # -------------------------------------------------------------------
+# boost
+# This will be used by find_package() in ApprovalTests.cpp/tests/Boost_Tests
+set(BOOST_ROOT ${CMAKE_CURRENT_SOURCE_DIR}/../boost)
+
+# -------------------------------------------------------------------
 # Catch2
 set(CATCH_BUILD_TESTING OFF CACHE BOOL "")
 add_subdirectory(
@@ -17,6 +22,14 @@ add_subdirectory(
 add_subdirectory(
         ../doctest
         ${CMAKE_CURRENT_BINARY_DIR}/doctest_build
+)
+
+# -------------------------------------------------------------------
+# fmt
+set(CATCH_BUILD_TESTING OFF CACHE BOOL "")
+add_subdirectory(
+        ../fmt
+        ${CMAKE_CURRENT_BINARY_DIR}/fmt_build
 )
 
 # -------------------------------------------------------------------
