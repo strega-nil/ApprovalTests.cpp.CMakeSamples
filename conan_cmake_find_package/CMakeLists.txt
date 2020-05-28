@@ -9,8 +9,8 @@ project(conan_cmake_find_package)
 # OR Using the "cmake_find_package" and "cmake_paths" generators
 include(${CMAKE_BINARY_DIR}/conan_paths.cmake)
 
-find_package(Catch2)
-find_package(ApprovalTests)
+find_package(Catch2 REQUIRED)
+find_package(ApprovalTests REQUIRED)
 
 enable_testing()
 
