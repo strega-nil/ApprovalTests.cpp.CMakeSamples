@@ -2,6 +2,10 @@
 
 include: conan_cmake
 
+The conanfile.txt file is:
+
+include: inc_conan_cmake_conanfile
+
 The top-level CMakeLists.txt file is:
 
 include: inc_conan_cmake_cmakelists

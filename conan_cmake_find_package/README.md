@@ -18,6 +18,22 @@ To change this file edit the source file and then execute ./run_markdown_templat
 | Mechanism    | Uses CMake's [`add_subdirectory()`](https://cmake.org/cmake/help/latest/command/add_subdirectory.html) |
  <!-- end include: conan_cmake_find_package. path: /conan_cmake_find_package/mdsource/conan_cmake_find_package.include.md -->
 
+The conanfile.txt file is:
+
+ <!-- include: inc_conan_cmake_find_package_conanfile. path: /conan_cmake_find_package/mdsource/inc_conan_cmake_find_package_conanfile.include.md -->
+
+```cmake
+[requires]
+catch2/2.11.0
+approvaltests.cpp/8.8.0
+
+[generators]
+cmake_find_package
+cmake_paths
+```
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./conan_cmake_find_package/conanfile.txt' title='File snippet was copied from'>snippet source</a></sup>
+ <!-- end include: inc_conan_cmake_find_package_conanfile. path: /conan_cmake_find_package/mdsource/inc_conan_cmake_find_package_conanfile.include.md -->
+
 The top-level CMakeLists.txt file is:
 
  <!-- include: inc_conan_cmake_find_package_cmakelists. path: /conan_cmake_find_package/mdsource/inc_conan_cmake_find_package_cmakelists.include.md -->
