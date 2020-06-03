@@ -20,7 +20,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 The top-level CMakeLists.txt file is:
 
- <!-- include: inc_conan_cmake_cmakelists. path: /mdsource/mdincludes/inc_conan_cmake_cmakelists.include.md -->
+ <!-- include: inc_conan_cmake_cmakelists. path: /conan_cmake/mdsource/inc_conan_cmake_cmakelists.include.md -->
 
 ```cmake
 cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
@@ -35,11 +35,11 @@ enable_testing()
 add_subdirectory(tests)
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./conan_cmake/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: inc_conan_cmake_cmakelists. path: /mdsource/mdincludes/inc_conan_cmake_cmakelists.include.md -->
+ <!-- end include: inc_conan_cmake_cmakelists. path: /conan_cmake/mdsource/inc_conan_cmake_cmakelists.include.md -->
 
 And the CMakeLists.txt that builds the tests is:
 
- <!-- include: inc_conan_cmake_tests_cmakelists. path: /mdsource/mdincludes/inc_conan_cmake_tests_cmakelists.include.md -->
+ <!-- include: inc_conan_cmake_tests_cmakelists. path: /conan_cmake/mdsource/inc_conan_cmake_tests_cmakelists.include.md -->
 
 ```cmake
 add_executable(tests
@@ -59,4 +59,4 @@ add_test(
         COMMAND tests)
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./conan_cmake/tests/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: inc_conan_cmake_tests_cmakelists. path: /mdsource/mdincludes/inc_conan_cmake_tests_cmakelists.include.md -->
+ <!-- end include: inc_conan_cmake_tests_cmakelists. path: /conan_cmake/mdsource/inc_conan_cmake_tests_cmakelists.include.md -->

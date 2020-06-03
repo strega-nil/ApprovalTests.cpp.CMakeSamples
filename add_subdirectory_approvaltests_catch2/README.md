@@ -18,7 +18,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 The top-level CMakeLists.txt file is:
 
- <!-- include: inc_add_subdirectory_approvaltests_catch2_cmakelists. path: /mdsource/mdincludes/inc_add_subdirectory_approvaltests_catch2_cmakelists.include.md -->
+ <!-- include: inc_add_subdirectory_approvaltests_catch2_cmakelists. path: /add_subdirectory_approvaltests_catch2/mdsource/inc_add_subdirectory_approvaltests_catch2_cmakelists.include.md -->
 
 ```cmake
 cmake_minimum_required(VERSION 3.8 FATAL_ERROR)
@@ -31,11 +31,11 @@ add_subdirectory(dependencies)
 add_subdirectory(tests)
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./add_subdirectory_approvaltests_catch2/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: inc_add_subdirectory_approvaltests_catch2_cmakelists. path: /mdsource/mdincludes/inc_add_subdirectory_approvaltests_catch2_cmakelists.include.md -->
+ <!-- end include: inc_add_subdirectory_approvaltests_catch2_cmakelists. path: /add_subdirectory_approvaltests_catch2/mdsource/inc_add_subdirectory_approvaltests_catch2_cmakelists.include.md -->
 
 The CMakeLists.txt to pull in dependencies is:
 
- <!-- include: inc_add_subdirectory_approvaltests_catch2_dependencies_cmakelists. path: /mdsource/mdincludes/inc_add_subdirectory_approvaltests_catch2_dependencies_cmakelists.include.md -->
+ <!-- include: inc_add_subdirectory_approvaltests_catch2_dependencies_cmakelists. path: /add_subdirectory_approvaltests_catch2/mdsource/inc_add_subdirectory_approvaltests_catch2_dependencies_cmakelists.include.md -->
 
 ```cmake
 # -------------------------------------------------------------------
@@ -54,11 +54,11 @@ add_subdirectory(
 )
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./add_subdirectory_approvaltests_catch2/dependencies/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: inc_add_subdirectory_approvaltests_catch2_dependencies_cmakelists. path: /mdsource/mdincludes/inc_add_subdirectory_approvaltests_catch2_dependencies_cmakelists.include.md -->
+ <!-- end include: inc_add_subdirectory_approvaltests_catch2_dependencies_cmakelists. path: /add_subdirectory_approvaltests_catch2/mdsource/inc_add_subdirectory_approvaltests_catch2_dependencies_cmakelists.include.md -->
 
 And the CMakeLists.txt that builds the tests is:
 
- <!-- include: inc_add_subdirectory_approvaltests_catch2_tests_cmakelists. path: /mdsource/mdincludes/inc_add_subdirectory_approvaltests_catch2_tests_cmakelists.include.md -->
+ <!-- include: inc_add_subdirectory_approvaltests_catch2_tests_cmakelists. path: /add_subdirectory_approvaltests_catch2/mdsource/inc_add_subdirectory_approvaltests_catch2_tests_cmakelists.include.md -->
 
 ```cmake
 add_executable(tests
@@ -75,4 +75,4 @@ add_test(
         COMMAND tests)
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./add_subdirectory_approvaltests_catch2/tests/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: inc_add_subdirectory_approvaltests_catch2_tests_cmakelists. path: /mdsource/mdincludes/inc_add_subdirectory_approvaltests_catch2_tests_cmakelists.include.md -->
+ <!-- end include: inc_add_subdirectory_approvaltests_catch2_tests_cmakelists. path: /add_subdirectory_approvaltests_catch2/mdsource/inc_add_subdirectory_approvaltests_catch2_tests_cmakelists.include.md -->

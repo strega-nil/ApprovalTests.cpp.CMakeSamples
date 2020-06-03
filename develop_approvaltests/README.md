@@ -20,7 +20,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 The top-level CMakeLists.txt file is:
 
- <!-- include: inc_develop_approvaltests_cmakelists. path: /mdsource/mdincludes/inc_develop_approvaltests_cmakelists.include.md -->
+ <!-- include: inc_develop_approvaltests_cmakelists. path: /develop_approvaltests/mdsource/inc_develop_approvaltests_cmakelists.include.md -->
 
 ```cmake
 cmake_minimum_required(VERSION 3.8 FATAL_ERROR)
@@ -97,4 +97,4 @@ add_subdirectory(
 )
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./develop_approvaltests/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: inc_develop_approvaltests_cmakelists. path: /mdsource/mdincludes/inc_develop_approvaltests_cmakelists.include.md -->
+ <!-- end include: inc_develop_approvaltests_cmakelists. path: /develop_approvaltests/mdsource/inc_develop_approvaltests_cmakelists.include.md -->

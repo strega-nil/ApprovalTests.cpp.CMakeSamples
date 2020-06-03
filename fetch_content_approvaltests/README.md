@@ -20,7 +20,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 The top-level CMakeLists.txt file is:
 
- <!-- include: inc_fetch_content_approvaltests_cmakelists. path: /mdsource/mdincludes/inc_fetch_content_approvaltests_cmakelists.include.md -->
+ <!-- include: inc_fetch_content_approvaltests_cmakelists. path: /fetch_content_approvaltests/mdsource/inc_fetch_content_approvaltests_cmakelists.include.md -->
 
 ```cmake
 cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
@@ -34,11 +34,11 @@ add_subdirectory(dependencies)
 add_subdirectory(tests)
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./fetch_content_approvaltests/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: inc_fetch_content_approvaltests_cmakelists. path: /mdsource/mdincludes/inc_fetch_content_approvaltests_cmakelists.include.md -->
+ <!-- end include: inc_fetch_content_approvaltests_cmakelists. path: /fetch_content_approvaltests/mdsource/inc_fetch_content_approvaltests_cmakelists.include.md -->
 
 The CMakeLists.txt to pull in dependencies is:
 
- <!-- include: inc_fetch_content_approvaltests_dependencies_cmakelists. path: /mdsource/mdincludes/inc_fetch_content_approvaltests_dependencies_cmakelists.include.md -->
+ <!-- include: inc_fetch_content_approvaltests_dependencies_cmakelists. path: /fetch_content_approvaltests/mdsource/inc_fetch_content_approvaltests_dependencies_cmakelists.include.md -->
 
 ```cmake
 # Needs CMake 3.14 or above
@@ -56,11 +56,11 @@ set(APPROVAL_TESTS_BUILD_THIRD_PARTY_CATCH2 ON CACHE BOOL "")
 FetchContent_MakeAvailable(ApprovalTests)
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./fetch_content_approvaltests/dependencies/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: inc_fetch_content_approvaltests_dependencies_cmakelists. path: /mdsource/mdincludes/inc_fetch_content_approvaltests_dependencies_cmakelists.include.md -->
+ <!-- end include: inc_fetch_content_approvaltests_dependencies_cmakelists. path: /fetch_content_approvaltests/mdsource/inc_fetch_content_approvaltests_dependencies_cmakelists.include.md -->
 
 And the CMakeLists.txt that builds the tests is:
 
- <!-- include: inc_fetch_content_approvaltests_tests_cmakelists. path: /mdsource/mdincludes/inc_fetch_content_approvaltests_tests_cmakelists.include.md -->
+ <!-- include: inc_fetch_content_approvaltests_tests_cmakelists. path: /fetch_content_approvaltests/mdsource/inc_fetch_content_approvaltests_tests_cmakelists.include.md -->
 
 ```cmake
 add_executable(tests
@@ -77,4 +77,4 @@ add_test(
         COMMAND tests)
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./fetch_content_approvaltests/tests/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: inc_fetch_content_approvaltests_tests_cmakelists. path: /mdsource/mdincludes/inc_fetch_content_approvaltests_tests_cmakelists.include.md -->
+ <!-- end include: inc_fetch_content_approvaltests_tests_cmakelists. path: /fetch_content_approvaltests/mdsource/inc_fetch_content_approvaltests_tests_cmakelists.include.md -->
