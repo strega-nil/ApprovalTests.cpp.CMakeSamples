@@ -11,7 +11,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 | Topic        | Detail                                                       |
 | ------------ | ------------------------------------------------------------ |
 | Directory    | [fetch_content_approvaltests_catch2](/fetch_content_approvaltests_catch2/) |
-| Purpose      | Demo how to build your tests using CMake's `FetchContent_Declare` and `FetchContent_MakeAvailable` to clone ApprovalTests.cpp and Catch2.<br />Those source code of those dependencies will be cloned inside your CMake build space, and will not be shown inside your IDE.<br />This requires at least CMake 3.14. |
+| Purpose      | Demo how to build your tests using CMake's `FetchContent_Declare` and `FetchContent_MakeAvailable` to clone ApprovalTests.cpp and Catch2.<br />The source code of those dependencies will be cloned inside your CMake build space, and will not be shown inside your IDE.<br />This requires at least CMake 3.14. |
 | Dependencies | ApprovalTests.cpp - cloned automatically by CMake<br />Catch2 - cloned automatically by CMake |
 | Mechanism    | Uses CMake's [`FetchContent`](https://cmake.org/cmake/help/latest/module/FetchContent.html) module. |
  <!-- end include: fetch_content_approvaltests_catch2. path: /fetch_content_approvaltests_catch2/mdsource/fetch_content_approvaltests_catch2.include.md -->
@@ -34,7 +34,7 @@ add_subdirectory(tests)
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./fetch_content_approvaltests_catch2/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
  <!-- end include: inc_fetch_content_approvaltests_catch2_cmakelists. path: /fetch_content_approvaltests_catch2/mdsource/inc_fetch_content_approvaltests_catch2_cmakelists.include.md -->
 
-The CMakeLists.txt to pull in dependencies is:
+The CMakeLists.txt to pull in dependencies is as follows: note that you can quote tags, branch names or commit IDs to control the exact version to be used:
 
  <!-- include: inc_fetch_content_approvaltests_catch2_dependencies_cmakelists. path: /fetch_content_approvaltests_catch2/mdsource/inc_fetch_content_approvaltests_catch2_dependencies_cmakelists.include.md -->
 
