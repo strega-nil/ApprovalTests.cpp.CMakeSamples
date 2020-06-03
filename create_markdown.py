@@ -32,6 +32,8 @@ def is_wanted_file(file):
         return True
     if file == 'CMakeLists.txt':
         return True
+    if file == 'conanfile.txt':
+        return True
     return False
 
 
