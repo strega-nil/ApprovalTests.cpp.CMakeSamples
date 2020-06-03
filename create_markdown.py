@@ -42,7 +42,7 @@ def show_for_markdown(root, file):
 
     dir_name = os.path.normpath(root).replace('/', '_')
     file_base_name = os.path.splitext(file)[0]
-    output_file = f'../ApprovalTests.cpp/doc/mdsource/inc_{dir_name}_{file_base_name.lower()}.include.md'
+    output_file = f'mdsource/mdincludes/inc_{dir_name}_{file_base_name.lower()}.include.md'
     print(output_file)
     with open(output_file, 'w') as s:
         s.write('\n')
