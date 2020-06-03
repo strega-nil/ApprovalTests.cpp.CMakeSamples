@@ -38,13 +38,17 @@ def is_wanted_file(file):
 
 
 def show_for_markdown(root, file):
+    top_level = os.path.split(root)[0]
+    if top_level == '.':
+        top_level = root
+
     rel_path = os.path.join(root, file)
     abs_path = os.path.abspath(rel_path)
     url_to_file = F'https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/{rel_path}'
 
     dir_name = os.path.normpath(root).replace('/', '_')
     file_base_name = os.path.splitext(file)[0]
-    output_file = f'mdsource/mdincludes/inc_{dir_name}_{file_base_name.lower()}.include.md'
+    output_file = f'{top_level}/mdsource/inc_{dir_name}_{file_base_name.lower()}.include.md'
     print(output_file)
     with open(output_file, 'w') as s:
         s.write('\n')
