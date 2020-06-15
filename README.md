@@ -62,27 +62,27 @@ CMake code for various scenarios, for including in the ApprovalTests.cpp cmake d
 ### conan_cmake
 
  <!-- include: conan_cmake. path: /conan_cmake/mdsource/conan_cmake.include.md -->
-**TODO** Update content of this table, for this director
+**TODO** Update content of this table, for this directory
 
 | Topic        | Detail                                                       |
 | ------------ | ------------------------------------------------------------ |
 | Directory    | [conan_cmake](/conan_cmake/)                        |
-| Purpose      | Demo how to build your tests against clones or forks of ApprovalTests.cpp and Catch2.<br />Those source code of those dependencies will be included in your IDE, alongside your own source code.<br />This allows you to make edits to the dependent projects. |
-| Dependencies | ApprovalTests.cpp - cloned on your machine<br />Catch2 - cloned on your machine |
-| Mechanism    | Uses CMake's [`add_subdirectory()`](https://cmake.org/cmake/help/latest/command/add_subdirectory.html) |
+| Purpose      |  |
+| Dependencies |  |
+| Mechanism    |  |
  <!-- end include: conan_cmake. path: /conan_cmake/mdsource/conan_cmake.include.md -->
 
 ### conan_cmake_find_package
 
  <!-- include: conan_cmake_find_package. path: /conan_cmake_find_package/mdsource/conan_cmake_find_package.include.md -->
-**TODO** Update content of this table, for this director
+**TODO** Update content of this table, for this directory
 
 | Topic        | Detail                                                       |
 | ------------ | ------------------------------------------------------------ |
 | Directory    | [conan_cmake_find_package](/conan_cmake_find_package/)                        |
-| Purpose      | Demo how to build your tests against clones or forks of ApprovalTests.cpp and Catch2.<br />Those source code of those dependencies will be included in your IDE, alongside your own source code.<br />This allows you to make edits to the dependent projects. |
-| Dependencies | ApprovalTests.cpp - cloned on your machine<br />Catch2 - cloned on your machine |
-| Mechanism    | Uses CMake's [`add_subdirectory()`](https://cmake.org/cmake/help/latest/command/add_subdirectory.html) |
+| Purpose      |  |
+| Dependencies |  |
+| Mechanism    |  |
  <!-- end include: conan_cmake_find_package. path: /conan_cmake_find_package/mdsource/conan_cmake_find_package.include.md -->
 
 ## Developing ApprovalTests.cpp with CMake
