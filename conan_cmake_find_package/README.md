@@ -16,6 +16,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 | Purpose      |  |
 | Dependencies |  |
 | Mechanism    |  |
+| More Detail  |  |
  <!-- end include: conan_cmake_find_package. path: /conan_cmake_find_package/mdsource/conan_cmake_find_package.include.md -->
 
 The conanfile.txt file is:

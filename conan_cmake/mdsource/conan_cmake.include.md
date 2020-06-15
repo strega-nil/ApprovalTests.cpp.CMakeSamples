@@ -7,4 +7,5 @@
 | Purpose      |  |
 | Dependencies |  |
 | Mechanism    |  |
+| More Detail  |  |
 

@@ -29,10 +29,11 @@ CMake code for various scenarios, for including in the ApprovalTests.cpp cmake d
  <!-- include: add_subdirectory_approvaltests_catch2. path: /add_subdirectory_approvaltests_catch2/mdsource/add_subdirectory_approvaltests_catch2.include.md -->
 | Topic        | Detail                                                       |
 | ------------ | ------------------------------------------------------------ |
-| Directory    | [add_subdirectory_approvaltests_catch2](/add_subdirectory_approvaltests_catch2/)                        |
+| Directory    | [add_subdirectory_approvaltests_catch2](/add_subdirectory_approvaltests_catch2/) |
 | Purpose      | Demo how to build your tests against clones or forks of ApprovalTests.cpp and Catch2.<br />Those source code of those dependencies will be included in your IDE, alongside your own source code.<br />This allows you to make edits to the dependent projects. |
 | Dependencies | ApprovalTests.cpp - cloned on your machine<br />Catch2 - cloned on your machine |
 | Mechanism    | Uses CMake's [`add_subdirectory()`](https://cmake.org/cmake/help/latest/command/add_subdirectory.html) |
+| More Detail  | See [Use own ApprovalTests.cpp and Catch2 clones](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/CMakeIntegration.md#use-own-approvaltestscpp-and-catch2-clones) |
  <!-- end include: add_subdirectory_approvaltests_catch2. path: /add_subdirectory_approvaltests_catch2/mdsource/add_subdirectory_approvaltests_catch2.include.md -->
 
 ### fetch_content_approvaltests
@@ -40,10 +41,11 @@ CMake code for various scenarios, for including in the ApprovalTests.cpp cmake d
  <!-- include: fetch_content_approvaltests. path: /fetch_content_approvaltests/mdsource/fetch_content_approvaltests.include.md -->
 | Topic        | Detail                                                       |
 | ------------ | ------------------------------------------------------------ |
-| Directory    | [fetch_content_approvaltests](/fetch_content_approvaltests/)                        |
+| Directory    | [fetch_content_approvaltests](/fetch_content_approvaltests/) |
 | Purpose      | Demo how to build your tests using CMake's `FetchContent_Declare` and `FetchContent_MakeAvailable` to clone ApprovalTests.cpp, and use its copy of Catch2.<br />The source code of this dependency will be cloned inside your CMake build space, and will not be shown inside your IDE.<br />This requires at least CMake 3.14. |
 | Dependencies | ApprovalTests.cpp - cloned automatically by CMake<br />Catch2 - the version in the pprovalTests.cpp repo will be used |
 | Mechanism    | Uses CMake's [`FetchContent`](https://cmake.org/cmake/help/latest/module/FetchContent.html) module. |
+| More Detail  | See [Make CMake clone ApprovalTests.cpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/CMakeIntegration.md#make-cmake-clone-approvaltestscpp) |
  <!-- end include: fetch_content_approvaltests. path: /fetch_content_approvaltests/mdsource/fetch_content_approvaltests.include.md -->
 
 ### fetch_content_approvaltests_catch2
@@ -55,6 +57,7 @@ CMake code for various scenarios, for including in the ApprovalTests.cpp cmake d
 | Purpose      | Demo how to build your tests using CMake's `FetchContent_Declare` and `FetchContent_MakeAvailable` to clone ApprovalTests.cpp and Catch2.<br />The source code of those dependencies will be cloned inside your CMake build space, and will not be shown inside your IDE.<br />This requires at least CMake 3.14. |
 | Dependencies | ApprovalTests.cpp - cloned automatically by CMake<br />Catch2 - cloned automatically by CMake |
 | Mechanism    | Uses CMake's [`FetchContent`](https://cmake.org/cmake/help/latest/module/FetchContent.html) module. |
+| More Detail  | See [Make CMake clone ApprovalTests.cpp and Catch2](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/CMakeIntegration.md#make-cmake-clone-approvaltestscpp-and-catch2) |
  <!-- end include: fetch_content_approvaltests_catch2. path: /fetch_content_approvaltests_catch2/mdsource/fetch_content_approvaltests_catch2.include.md -->
 
 ## Using ApprovalTests.cpp with CMake and Conan
@@ -70,6 +73,7 @@ CMake code for various scenarios, for including in the ApprovalTests.cpp cmake d
 | Purpose      |  |
 | Dependencies |  |
 | Mechanism    |  |
+| More Detail  |  |
  <!-- end include: conan_cmake. path: /conan_cmake/mdsource/conan_cmake.include.md -->
 
 ### conan_cmake_find_package
@@ -83,6 +87,7 @@ CMake code for various scenarios, for including in the ApprovalTests.cpp cmake d
 | Purpose      |  |
 | Dependencies |  |
 | Mechanism    |  |
+| More Detail  |  |
  <!-- end include: conan_cmake_find_package. path: /conan_cmake_find_package/mdsource/conan_cmake_find_package.include.md -->
 
 ## Developing ApprovalTests.cpp with CMake
@@ -96,5 +101,6 @@ CMake code for various scenarios, for including in the ApprovalTests.cpp cmake d
 | Purpose      | Demo how to build the ApprovalTests.cpp project against your clones or forks of all its dependencies.<br />Those source code of those dependencies will be included in your IDE, alongside your own source code.<br />This allows you to make edits to the dependent projects. |
 | Dependencies | ApprovalTests.cpp - cloned on your machine<br />All its dependencies also cloned on your machine |
 | Mechanism    | Uses CMake's [`find_package()`](https://cmake.org/cmake/help/latest/command/find_package.html) for finding boost, and [`add_subdirectory()`](https://cmake.org/cmake/help/latest/command/add_subdirectory.html) for everything else. |
+| More Detail  | See [Developing ApprovalTests.cpp with test framework sources](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/CMakeIntegration.md#developing-approvaltestscpp-with-test-framework-sources) |
  <!-- end include: develop_approvaltests. path: /develop_approvaltests/mdsource/develop_approvaltests.include.md -->
 
