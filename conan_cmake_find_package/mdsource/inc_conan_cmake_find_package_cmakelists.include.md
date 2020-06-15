@@ -19,5 +19,5 @@ enable_testing()
 
 add_subdirectory(tests)
 ```
-<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./conan_cmake_find_package/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake_find_package/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
 

@@ -9,5 +9,5 @@ approvaltests.cpp/8.8.0
 cmake_find_package
 cmake_paths
 ```
-<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./conan_cmake_find_package/conanfile.txt' title='File snippet was copied from'>snippet source</a></sup>
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake_find_package/conanfile.txt' title='File snippet was copied from'>snippet source</a></sup>
 
