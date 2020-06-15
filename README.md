@@ -10,16 +10,21 @@ To change this file edit the source file and then execute ./run_markdown_templat
 <!-- toc -->
 ## Contents
 
-  * [add_subdirectory_approvaltests_catch2](#add_subdirectory_approvaltests_catch2)
-  * [fetch_content_approvaltests](#fetch_content_approvaltests)
-  * [fetch_content_approvaltests_catch2](#fetch_content_approvaltests_catch2)
-  * [conan_cmake](#conan_cmake)
-  * [conan_cmake_find_package](#conan_cmake_find_package)
-  * [develop_approvaltests](#develop_approvaltests)<!-- endtoc -->
+  * [Using ApprovalTests.cpp with CMake](#using-approvaltestscpp-with-cmake)
+    * [add_subdirectory_approvaltests_catch2](#add_subdirectory_approvaltests_catch2)
+    * [fetch_content_approvaltests](#fetch_content_approvaltests)
+    * [fetch_content_approvaltests_catch2](#fetch_content_approvaltests_catch2)
+  * [Using ApprovalTests.cpp with CMake and Conan](#using-approvaltestscpp-with-cmake-and-conan)
+    * [conan_cmake](#conan_cmake)
+    * [conan_cmake_find_package](#conan_cmake_find_package)
+  * [Developing ApprovalTests.cpp with CMake](#developing-approvaltestscpp-with-cmake)
+    * [develop_approvaltests](#develop_approvaltests)<!-- endtoc -->
 
 CMake code for various scenarios, for including in the ApprovalTests.cpp cmake docs, and for copying as templates for new projects.  
 
-## add_subdirectory_approvaltests_catch2
+## Using ApprovalTests.cpp with CMake
+
+### add_subdirectory_approvaltests_catch2
 
  <!-- include: add_subdirectory_approvaltests_catch2. path: /add_subdirectory_approvaltests_catch2/mdsource/add_subdirectory_approvaltests_catch2.include.md -->
 | Topic        | Detail                                                       |
@@ -30,7 +35,7 @@ CMake code for various scenarios, for including in the ApprovalTests.cpp cmake d
 | Mechanism    | Uses CMake's [`add_subdirectory()`](https://cmake.org/cmake/help/latest/command/add_subdirectory.html) |
  <!-- end include: add_subdirectory_approvaltests_catch2. path: /add_subdirectory_approvaltests_catch2/mdsource/add_subdirectory_approvaltests_catch2.include.md -->
 
-## fetch_content_approvaltests
+### fetch_content_approvaltests
 
  <!-- include: fetch_content_approvaltests. path: /fetch_content_approvaltests/mdsource/fetch_content_approvaltests.include.md -->
 | Topic        | Detail                                                       |
@@ -41,7 +46,7 @@ CMake code for various scenarios, for including in the ApprovalTests.cpp cmake d
 | Mechanism    | Uses CMake's [`FetchContent`](https://cmake.org/cmake/help/latest/module/FetchContent.html) module. |
  <!-- end include: fetch_content_approvaltests. path: /fetch_content_approvaltests/mdsource/fetch_content_approvaltests.include.md -->
 
-## fetch_content_approvaltests_catch2
+### fetch_content_approvaltests_catch2
 
  <!-- include: fetch_content_approvaltests_catch2. path: /fetch_content_approvaltests_catch2/mdsource/fetch_content_approvaltests_catch2.include.md -->
 | Topic        | Detail                                                       |
@@ -52,7 +57,9 @@ CMake code for various scenarios, for including in the ApprovalTests.cpp cmake d
 | Mechanism    | Uses CMake's [`FetchContent`](https://cmake.org/cmake/help/latest/module/FetchContent.html) module. |
  <!-- end include: fetch_content_approvaltests_catch2. path: /fetch_content_approvaltests_catch2/mdsource/fetch_content_approvaltests_catch2.include.md -->
 
-## conan_cmake
+## Using ApprovalTests.cpp with CMake and Conan
+
+### conan_cmake
 
  <!-- include: conan_cmake. path: /conan_cmake/mdsource/conan_cmake.include.md -->
 **TODO** Update content of this table, for this director
@@ -65,7 +72,7 @@ CMake code for various scenarios, for including in the ApprovalTests.cpp cmake d
 | Mechanism    | Uses CMake's [`add_subdirectory()`](https://cmake.org/cmake/help/latest/command/add_subdirectory.html) |
  <!-- end include: conan_cmake. path: /conan_cmake/mdsource/conan_cmake.include.md -->
 
-## conan_cmake_find_package
+### conan_cmake_find_package
 
  <!-- include: conan_cmake_find_package. path: /conan_cmake_find_package/mdsource/conan_cmake_find_package.include.md -->
 **TODO** Update content of this table, for this director
@@ -78,7 +85,9 @@ CMake code for various scenarios, for including in the ApprovalTests.cpp cmake d
 | Mechanism    | Uses CMake's [`add_subdirectory()`](https://cmake.org/cmake/help/latest/command/add_subdirectory.html) |
  <!-- end include: conan_cmake_find_package. path: /conan_cmake_find_package/mdsource/conan_cmake_find_package.include.md -->
 
-## develop_approvaltests
+## Developing ApprovalTests.cpp with CMake
+
+### develop_approvaltests
 
  <!-- include: develop_approvaltests. path: /develop_approvaltests/mdsource/develop_approvaltests.include.md -->
 | Topic        | Detail                                                       |
