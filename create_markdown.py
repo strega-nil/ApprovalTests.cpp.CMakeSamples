@@ -44,7 +44,7 @@ def show_for_markdown(root, file):
 
     rel_path = os.path.join(root, file)
     abs_path = os.path.abspath(rel_path)
-    url_to_file = F'https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/{rel_path}'
+    url_to_file = F'https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/{rel_path}'
 
     dir_name = os.path.normpath(root).replace('/', '_')
     file_base_name = os.path.splitext(file)[0]
