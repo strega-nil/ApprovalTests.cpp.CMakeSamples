@@ -65,15 +65,13 @@ CMake code for various scenarios, for including in the ApprovalTests.cpp cmake d
 ### conan_cmake
 
  <!-- include: conan_cmake. path: /conan_cmake/mdsource/conan_cmake.include.md -->
-**TODO** Update content of this table, for this directory
-
 | Topic        | Detail                                                       |
 | ------------ | ------------------------------------------------------------ |
-| Directory    | [conan_cmake](/conan_cmake/)                        |
-| Purpose      |  |
-| Dependencies |  |
-| Mechanism    |  |
-| More Detail  |  |
+| Directory    | [conan_cmake](/conan_cmake/)                                 |
+| Purpose      | Demo how to build your tests using Conan's `cmake`  generator to download single headers for specific releases of ApprovalTests.cpp and Catch2.<br />The released headers of those dependencies will be downloaded inside your CMake build space, and will not be shown inside your IDE. |
+| Dependencies | ApprovalTests.cpp - downloaded automatically by Conan<br/>Catch2 - downloaded automatically by Conan |
+| Mechanism    | Uses Conan's [`cmake`](https://docs.conan.io/en/latest/integrations/build_system/cmake/cmake_generator.html) generator.                              |
+| More Detail  |                                                              |
  <!-- end include: conan_cmake. path: /conan_cmake/mdsource/conan_cmake.include.md -->
 
 ### conan_cmake_find_package
