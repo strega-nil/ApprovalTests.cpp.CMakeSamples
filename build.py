@@ -3,7 +3,7 @@
 import os
 import subprocess
 
-ignored_paths = ['.git', '.idea']
+ignored_paths = ['.git', '.idea', 'mdsource']
 
 for dir in os.listdir(os.getcwd()):
     if not os.path.isdir(dir):
