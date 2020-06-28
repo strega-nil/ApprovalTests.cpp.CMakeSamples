@@ -28,6 +28,10 @@ include: conan_cmake
 
 include: conan_cmake_find_package
 
+### cmake_invoking_conan
+
+include: cmake_invoking_conan
+
 ## Developing ApprovalTests.cpp with CMake
 
 ### develop_approvaltests

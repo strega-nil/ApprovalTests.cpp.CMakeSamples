@@ -17,6 +17,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
   * [Using ApprovalTests.cpp with CMake and Conan](#using-approvaltestscpp-with-cmake-and-conan)
     * [conan_cmake](#conan_cmake)
     * [conan_cmake_find_package](#conan_cmake_find_package)
+    * [cmake_invoking_conan](#cmake_invoking_conan)
   * [Developing ApprovalTests.cpp with CMake](#developing-approvaltestscpp-with-cmake)
     * [develop_approvaltests](#develop_approvaltests)<!-- endtoc -->
 
@@ -85,6 +86,18 @@ CMake code for various scenarios, for including in the ApprovalTests.cpp cmake d
 | Mechanism    | Uses Conan's [`cmake_find_package`](https://docs.conan.io/en/latest/integrations/build_system/cmake/cmake_find_package_generator.html) and (optionally) [`cmake_paths`](https://docs.conan.io/en/latest/integrations/build_system/cmake/cmake_paths_generator.html) generators.                              |
 | More Detail  |                                                              |
  <!-- end include: conan_cmake_find_package. path: /conan_cmake_find_package/mdsource/conan_cmake_find_package.include.md -->
+
+### cmake_invoking_conan
+
+ <!-- include: cmake_invoking_conan. path: /cmake_invoking_conan/mdsource/cmake_invoking_conan.include.md -->
+| Topic        | Detail                                                       |
+| ------------ | ------------------------------------------------------------ |
+| Directory    | [cmake_invoking_conan](/cmake_invoking_conan/)                                 |
+| Purpose      | Demo how to build your tests by getting CMake to invoke Conan, to download single headers for specific releases of ApprovalTests.cpp and Catch2.<br />The released headers of those dependencies will be downloaded inside your CMake build space, and will not be shown inside your IDE. |
+| Dependencies | ApprovalTests.cpp - downloaded automatically by CMake invoking Conan<br/>Catch2 - downloaded automatically by CMake invoking Conan |
+| Mechanism    | Uses the [cmake-conan](https://github.com/conan-io/cmake-conan) CMake module to invoke Conan automatically from within CMake.                              |
+| More Detail  |                                                              |
+ <!-- end include: cmake_invoking_conan. path: /cmake_invoking_conan/mdsource/cmake_invoking_conan.include.md -->
 
 ## Developing ApprovalTests.cpp with CMake
 
