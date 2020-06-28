@@ -1,9 +1,9 @@
 #!/bin/sh
 
 sourcedir=`pwd`
-mkdir -p cmake-build-spaces/cmake-build-command-line
-cd       cmake-build-spaces/cmake-build-command-line
-conan install $sourcedir
-cmake -Wdev $sourcedir
+mkdir -p build
+cd       build
+conan install ..
+cmake -Wdev ..
 cmake --build .
 ctest .

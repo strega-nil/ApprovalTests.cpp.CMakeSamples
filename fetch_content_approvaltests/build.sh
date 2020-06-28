@@ -1,8 +1,8 @@
 #!/bin/sh
 
 sourcedir=`pwd`
-mkdir -p cmake-build-spaces/cmake-build-command-line
-cd       cmake-build-spaces/cmake-build-command-line
-cmake -Wdev $sourcedir
+mkdir -p build
+cd       build
+cmake -Wdev ..
 cmake --build .
 ctest .
