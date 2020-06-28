@@ -34,7 +34,39 @@ approvaltests.cpp/8.8.0
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./cmake_invoking_conan/conanfile.txt' title='File snippet was copied from'>snippet source</a></sup>
  <!-- end include: inc_cmake_invoking_conan_conanfile. path: /cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_conanfile.include.md -->
 
-The top-level CMakeLists.txt file is:
+There is a CMake file called `CMake/Conan.cmake` which contains instructions for downloading a specific version of the cmake-conan CMake module:
+
+ <!-- include: inc_cmake_invoking_conan_CMake_conan. path: /cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_CMake_conan.include.md -->
+
+```cmake
+macro(run_conan)
+# Download automatically, you can also just copy the conan.cmake file
+if(NOT EXISTS "${CMAKE_BINARY_DIR}/conan.cmake")
+  message(
+    STATUS
+      "Downloading conan.cmake from https://github.com/conan-io/cmake-conan")
+  file(DOWNLOAD "https://github.com/conan-io/cmake-conan/raw/v0.15/conan.cmake"
+       "${CMAKE_BINARY_DIR}/conan.cmake")
+endif()
+
+include(${CMAKE_BINARY_DIR}/conan.cmake)
+
+conan_add_remote(NAME bincrafters URL
+                 https://api.bintray.com/conan/bincrafters/public-conan)
+
+conan_cmake_run(
+  CONANFILE conanfile.txt
+  BASIC_SETUP
+  CMAKE_TARGETS # individual targets to link to
+  BUILD
+    missing
+)
+endmacro()
+```
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./cmake_invoking_conan/CMake/Conan.cmake' title='File snippet was copied from'>snippet source</a></sup>
+ <!-- end include: inc_cmake_invoking_conan_CMake_conan. path: /cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_CMake_conan.include.md -->
+ 
+The top-level CMakeLists.txt file includes the above `CMake/Conan.cmake` file, and runs the macro that it contained:
 
  <!-- include: inc_cmake_invoking_conan_cmakelists. path: /cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_cmakelists.include.md -->
 

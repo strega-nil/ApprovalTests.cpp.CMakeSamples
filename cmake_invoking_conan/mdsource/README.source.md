@@ -6,7 +6,11 @@ The conanfile.txt file is:
 
 include: inc_cmake_invoking_conan_conanfile
 
-The top-level CMakeLists.txt file is:
+There is a CMake file called `CMake/Conan.cmake` which contains instructions for downloading a specific version of the cmake-conan CMake module:
+
+include: inc_cmake_invoking_conan_CMake_conan
+ 
+The top-level CMakeLists.txt file includes the above `CMake/Conan.cmake` file, and runs the macro that it contained:
 
 include: inc_cmake_invoking_conan_cmakelists
 
