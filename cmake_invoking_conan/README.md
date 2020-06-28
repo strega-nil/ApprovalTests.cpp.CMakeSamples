@@ -27,6 +27,9 @@ The conanfile.txt file is:
 [requires]
 catch2/2.11.0
 approvaltests.cpp/8.8.0
+
+# Note that we don't say what generator we want.
+# CMake code will take care of that for us.
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./cmake_invoking_conan/conanfile.txt' title='File snippet was copied from'>snippet source</a></sup>
  <!-- end include: inc_cmake_invoking_conan_conanfile. path: /cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_conanfile.include.md -->
@@ -40,9 +43,8 @@ cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
 
 project(conan_cmake)
 
-# Provide path for scripts
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/CMake")
-include(Conan)
+# Load CMake/Conan.cmake, which sets up a 'run_conan()' macro to download dependencies.
+include(CMake/Conan.cmake)
 run_conan()
 
 enable_testing()
@@ -89,6 +91,8 @@ The build script is:
 
 mkdir -p build
 cd       build
+# Note that we do not need to invoke conan.
+# However, we do need to say what build configuration we want.
 cmake  -DCMAKE_BUILD_TYPE=Debug ..
 cmake --build .
 ctest .
