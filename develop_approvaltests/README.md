@@ -95,5 +95,26 @@ add_subdirectory(
         ${CMAKE_CURRENT_BINARY_DIR}/approvaltests.cpp_build
 )
 ```
-<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./develop_approvaltests/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./develop_approvaltests/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
  <!-- end include: inc_develop_approvaltests_cmakelists. path: /develop_approvaltests/mdsource/inc_develop_approvaltests_cmakelists.include.md -->
+
+The build script is:
+
+ <!-- include: inc_develop_approvaltests_build. path: /develop_approvaltests/mdsource/inc_develop_approvaltests_build.include.md -->
+
+```cmake
+#!/bin/sh
+
+# Force execution to halt if there are any errors in this script:
+set -e
+set -o pipefail
+
+sourcedir=`pwd`
+mkdir -p cmake-build-spaces/cmake-build-command-line
+cd       cmake-build-spaces/cmake-build-command-line
+cmake -Wdev $sourcedir
+cmake --build .
+ctest .
+```
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./develop_approvaltests/build.sh' title='File snippet was copied from'>snippet source</a></sup>
+ <!-- end include: inc_develop_approvaltests_build. path: /develop_approvaltests/mdsource/inc_develop_approvaltests_build.include.md -->

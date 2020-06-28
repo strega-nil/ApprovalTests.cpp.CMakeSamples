@@ -13,3 +13,7 @@ include: inc_add_subdirectory_approvaltests_catch2_dependencies_cmakelists
 And the CMakeLists.txt that builds the tests is:
 
 include: inc_add_subdirectory_approvaltests_catch2_tests_cmakelists
+
+The build script is:
+
+include: inc_add_subdirectory_approvaltests_catch2_build

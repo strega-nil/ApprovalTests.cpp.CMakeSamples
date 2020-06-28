@@ -31,7 +31,7 @@ enable_testing()
 add_subdirectory(dependencies)
 add_subdirectory(tests)
 ```
-<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./add_subdirectory_approvaltests_catch2/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./add_subdirectory_approvaltests_catch2/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
  <!-- end include: inc_add_subdirectory_approvaltests_catch2_cmakelists. path: /add_subdirectory_approvaltests_catch2/mdsource/inc_add_subdirectory_approvaltests_catch2_cmakelists.include.md -->
 
 The CMakeLists.txt to pull in dependencies is:
@@ -54,7 +54,7 @@ add_subdirectory(
         ${CMAKE_CURRENT_BINARY_DIR}/catch2_build
 )
 ```
-<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./add_subdirectory_approvaltests_catch2/dependencies/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./add_subdirectory_approvaltests_catch2/dependencies/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
  <!-- end include: inc_add_subdirectory_approvaltests_catch2_dependencies_cmakelists. path: /add_subdirectory_approvaltests_catch2/mdsource/inc_add_subdirectory_approvaltests_catch2_dependencies_cmakelists.include.md -->
 
 And the CMakeLists.txt that builds the tests is:
@@ -75,5 +75,26 @@ add_test(
         NAME tests
         COMMAND tests)
 ```
-<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./add_subdirectory_approvaltests_catch2/tests/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./add_subdirectory_approvaltests_catch2/tests/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
  <!-- end include: inc_add_subdirectory_approvaltests_catch2_tests_cmakelists. path: /add_subdirectory_approvaltests_catch2/mdsource/inc_add_subdirectory_approvaltests_catch2_tests_cmakelists.include.md -->
+
+The build script is:
+
+ <!-- include: inc_add_subdirectory_approvaltests_catch2_build. path: /add_subdirectory_approvaltests_catch2/mdsource/inc_add_subdirectory_approvaltests_catch2_build.include.md -->
+
+```cmake
+#!/bin/sh
+
+# Force execution to halt if there are any errors in this script:
+set -e
+set -o pipefail
+
+sourcedir=`pwd`
+mkdir -p cmake-build-spaces/cmake-build-command-line
+cd       cmake-build-spaces/cmake-build-command-line
+cmake -Wdev $sourcedir
+cmake --build .
+ctest .
+```
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./add_subdirectory_approvaltests_catch2/build.sh' title='File snippet was copied from'>snippet source</a></sup>
+ <!-- end include: inc_add_subdirectory_approvaltests_catch2_build. path: /add_subdirectory_approvaltests_catch2/mdsource/inc_add_subdirectory_approvaltests_catch2_build.include.md -->

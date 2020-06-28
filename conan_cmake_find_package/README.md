@@ -30,7 +30,7 @@ approvaltests.cpp/8.8.0
 cmake_find_package
 cmake_paths
 ```
-<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./conan_cmake_find_package/conanfile.txt' title='File snippet was copied from'>snippet source</a></sup>
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake_find_package/conanfile.txt' title='File snippet was copied from'>snippet source</a></sup>
  <!-- end include: inc_conan_cmake_find_package_conanfile. path: /conan_cmake_find_package/mdsource/inc_conan_cmake_find_package_conanfile.include.md -->
 
 The top-level CMakeLists.txt file is:
@@ -56,7 +56,7 @@ enable_testing()
 
 add_subdirectory(tests)
 ```
-<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./conan_cmake_find_package/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake_find_package/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
  <!-- end include: inc_conan_cmake_find_package_cmakelists. path: /conan_cmake_find_package/mdsource/inc_conan_cmake_find_package_cmakelists.include.md -->
 
 And the CMakeLists.txt that builds the tests is:
@@ -80,5 +80,27 @@ add_test(
         NAME tests
         COMMAND tests)
 ```
-<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./conan_cmake_find_package/tests/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake_find_package/tests/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
  <!-- end include: inc_conan_cmake_find_package_tests_cmakelists. path: /conan_cmake_find_package/mdsource/inc_conan_cmake_find_package_tests_cmakelists.include.md -->
+
+The build script is:
+
+ <!-- include: inc_conan_cmake_find_package_build. path: /conan_cmake_find_package/mdsource/inc_conan_cmake_find_package_build.include.md -->
+
+```cmake
+#!/bin/sh
+
+# Force execution to halt if there are any errors in this script:
+set -e
+set -o pipefail
+
+sourcedir=`pwd`
+mkdir -p cmake-build-spaces/cmake-build-command-line
+cd       cmake-build-spaces/cmake-build-command-line
+conan install $sourcedir
+cmake -Wdev $sourcedir
+cmake --build .
+ctest .
+```
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake_find_package/build.sh' title='File snippet was copied from'>snippet source</a></sup>
+ <!-- end include: inc_conan_cmake_find_package_build. path: /conan_cmake_find_package/mdsource/inc_conan_cmake_find_package_build.include.md -->

@@ -29,7 +29,7 @@ approvaltests.cpp/8.8.0
 [generators]
 cmake
 ```
-<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./conan_cmake/conanfile.txt' title='File snippet was copied from'>snippet source</a></sup>
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake/conanfile.txt' title='File snippet was copied from'>snippet source</a></sup>
  <!-- end include: inc_conan_cmake_conanfile. path: /conan_cmake/mdsource/inc_conan_cmake_conanfile.include.md -->
 
 The top-level CMakeLists.txt file is:
@@ -48,7 +48,7 @@ enable_testing()
 
 add_subdirectory(tests)
 ```
-<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./conan_cmake/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
  <!-- end include: inc_conan_cmake_cmakelists. path: /conan_cmake/mdsource/inc_conan_cmake_cmakelists.include.md -->
 
 And the CMakeLists.txt that builds the tests is:
@@ -76,5 +76,27 @@ add_test(
         NAME tests
         COMMAND tests)
 ```
-<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/master/./conan_cmake/tests/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake/tests/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
  <!-- end include: inc_conan_cmake_tests_cmakelists. path: /conan_cmake/mdsource/inc_conan_cmake_tests_cmakelists.include.md -->
+
+The build script is:
+
+ <!-- include: inc_conan_cmake_build. path: /conan_cmake/mdsource/inc_conan_cmake_build.include.md -->
+
+```cmake
+#!/bin/sh
+
+# Force execution to halt if there are any errors in this script:
+set -e
+set -o pipefail
+
+sourcedir=`pwd`
+mkdir -p cmake-build-spaces/cmake-build-command-line
+cd       cmake-build-spaces/cmake-build-command-line
+conan install $sourcedir
+cmake -Wdev $sourcedir
+cmake --build .
+ctest .
+```
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake/build.sh' title='File snippet was copied from'>snippet source</a></sup>
+ <!-- end include: inc_conan_cmake_build. path: /conan_cmake/mdsource/inc_conan_cmake_build.include.md -->
