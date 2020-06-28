@@ -85,7 +85,6 @@ The build script is:
 ```bash
 #!/bin/sh
 
-sourcedir=`pwd`
 mkdir -p build
 cd       build
 cmake  ..
