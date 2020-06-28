@@ -43,7 +43,7 @@ def get_syntax_name(file_base_name, file_extension):
     print(file_base_name, file_extension)
     if file_extension == ".sh":
         return 'bash'
-    if file_base_name == 'CMakeLists':
+    if file_base_name == 'CMakeLists' or file_extension == ".cmake":
         return 'cmake'
     return ''
 
