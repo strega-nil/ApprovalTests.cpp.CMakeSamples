@@ -34,6 +34,8 @@ def is_wanted_file(file):
         return True
     if file == 'conanfile.txt':
         return True
+    if file == 'build.sh':
+        return True
     return False
 
 
