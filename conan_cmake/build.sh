@@ -4,6 +4,6 @@ sourcedir=`pwd`
 mkdir -p build
 cd       build
 conan install ..
-cmake -Wdev ..
+cmake  ..
 cmake --build .
 ctest .
