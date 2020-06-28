@@ -39,6 +39,15 @@ def is_wanted_file(file):
     return False
 
 
+def get_syntax_name(file_base_name, file_extension):
+    print(file_base_name, file_extension)
+    if file_extension == ".sh":
+        return 'bash'
+    if file_base_name == 'CMakeLists':
+        return 'cmake'
+    return ''
+
+
 def show_for_markdown(root, file):
     top_level = os.path.split(root)[0]
     if top_level == '.':
@@ -50,12 +59,15 @@ def show_for_markdown(root, file):
 
     dir_name = os.path.normpath(root).replace('/', '_')
     file_base_name = os.path.splitext(file)[0]
+    file_extension = os.path.splitext(file)[1]
+    syntax_name = get_syntax_name(file_base_name, file_extension)
+
     output_file = f'{top_level}/mdsource/inc_{dir_name}_{file_base_name.lower()}.include.md'
     print(output_file)
     with open(output_file, 'w') as s:
         s.write('\n')
         s.write('\n')
-        s.write('```cmake\n')
+        s.write(f'```{syntax_name}\n')
         with open(abs_path) as f:
             s.write(f'{"".join(f.readlines())}')
         s.write('```\n')

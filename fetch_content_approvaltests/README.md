@@ -82,7 +82,7 @@ The build script is:
 
  <!-- include: inc_fetch_content_approvaltests_build. path: /fetch_content_approvaltests/mdsource/inc_fetch_content_approvaltests_build.include.md -->
 
-```cmake
+```bash
 #!/bin/sh
 
 sourcedir=`pwd`

@@ -102,7 +102,7 @@ The build script is:
 
  <!-- include: inc_develop_approvaltests_build. path: /develop_approvaltests/mdsource/inc_develop_approvaltests_build.include.md -->
 
-```cmake
+```bash
 #!/bin/sh
 
 sourcedir=`pwd`

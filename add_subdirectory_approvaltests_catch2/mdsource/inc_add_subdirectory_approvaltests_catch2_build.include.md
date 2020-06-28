@@ -1,6 +1,6 @@
 
 
-```cmake
+```bash
 #!/bin/sh
 
 sourcedir=`pwd`

@@ -21,7 +21,7 @@ The conanfile.txt file is:
 
  <!-- include: inc_conan_cmake_conanfile. path: /conan_cmake/mdsource/inc_conan_cmake_conanfile.include.md -->
 
-```cmake
+```
 [requires]
 catch2/2.11.0
 approvaltests.cpp/8.8.0
@@ -83,7 +83,7 @@ The build script is:
 
  <!-- include: inc_conan_cmake_build. path: /conan_cmake/mdsource/inc_conan_cmake_build.include.md -->
 
-```cmake
+```bash
 #!/bin/sh
 
 sourcedir=`pwd`

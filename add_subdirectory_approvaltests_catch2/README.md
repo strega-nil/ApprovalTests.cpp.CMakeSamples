@@ -82,7 +82,7 @@ The build script is:
 
  <!-- include: inc_add_subdirectory_approvaltests_catch2_build. path: /add_subdirectory_approvaltests_catch2/mdsource/inc_add_subdirectory_approvaltests_catch2_build.include.md -->
 
-```cmake
+```bash
 #!/bin/sh
 
 sourcedir=`pwd`

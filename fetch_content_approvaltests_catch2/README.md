@@ -87,7 +87,7 @@ The build script is:
 
  <!-- include: inc_fetch_content_approvaltests_catch2_build. path: /fetch_content_approvaltests_catch2/mdsource/inc_fetch_content_approvaltests_catch2_build.include.md -->
 
-```cmake
+```bash
 #!/bin/sh
 
 sourcedir=`pwd`

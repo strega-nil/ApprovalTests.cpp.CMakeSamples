@@ -1,6 +1,6 @@
 
 
-```cmake
+```
 [requires]
 catch2/2.11.0
 approvaltests.cpp/8.8.0
