@@ -17,7 +17,7 @@ import os
 
 def remove_unwanted_dirs(dirs):
     kept_dirs = []
-    excluded = ['.git', '.idea']
+    excluded = ['.git', '.idea', 'build']
     for dir in dirs:
         if dir.startswith('cmake-build'):
             continue
