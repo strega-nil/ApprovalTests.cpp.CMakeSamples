@@ -20,13 +20,13 @@ include: fetch_content_approvaltests_catch2
 
 ## Using ApprovalTests.cpp with CMake and Conan
 
-### conan_cmake
-
-include: conan_cmake
-
 ### conan_cmake_find_package
 
 include: conan_cmake_find_package
+
+### conan_cmake
+
+include: conan_cmake
 
 ### cmake_invoking_conan
 

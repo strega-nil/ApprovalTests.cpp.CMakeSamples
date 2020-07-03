@@ -15,8 +15,8 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [fetch_content_approvaltests](#fetch_content_approvaltests)
     * [fetch_content_approvaltests_catch2](#fetch_content_approvaltests_catch2)
   * [Using ApprovalTests.cpp with CMake and Conan](#using-approvaltestscpp-with-cmake-and-conan)
-    * [conan_cmake](#conan_cmake)
     * [conan_cmake_find_package](#conan_cmake_find_package)
+    * [conan_cmake](#conan_cmake)
     * [cmake_invoking_conan](#cmake_invoking_conan)
   * [Developing ApprovalTests.cpp with CMake](#developing-approvaltestscpp-with-cmake)
     * [develop_approvaltests](#develop_approvaltests)<!-- endtoc -->
@@ -63,18 +63,6 @@ CMake code for various scenarios, for including in the ApprovalTests.cpp cmake d
 
 ## Using ApprovalTests.cpp with CMake and Conan
 
-### conan_cmake
-
- <!-- include: conan_cmake. path: /conan_cmake/mdsource/conan_cmake.include.md -->
-| Topic        | Detail                                                       |
-| ------------ | ------------------------------------------------------------ |
-| Directory    | [conan_cmake](/conan_cmake/)                                 |
-| Purpose      | Demo how to build your tests using Conan's `cmake`  generator to download single headers for specific releases of ApprovalTests.cpp and Catch2.<br />The released headers of those dependencies will be downloaded inside your CMake build space, and will not be shown inside your IDE. |
-| Dependencies | ApprovalTests.cpp - downloaded automatically by Conan<br/>Catch2 - downloaded automatically by Conan |
-| Mechanism    | Uses Conan's [`cmake`](https://docs.conan.io/en/latest/integrations/build_system/cmake/cmake_generator.html) generator. |
-| More Detail  | See [Example 2. Using Conan's cmake generator](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/ConanIntegration.md#example-2-using-conans-cmake-generator) |
- <!-- end include: conan_cmake. path: /conan_cmake/mdsource/conan_cmake.include.md -->
-
 ### conan_cmake_find_package
 
  <!-- include: conan_cmake_find_package. path: /conan_cmake_find_package/mdsource/conan_cmake_find_package.include.md -->
@@ -86,6 +74,18 @@ CMake code for various scenarios, for including in the ApprovalTests.cpp cmake d
 | Mechanism    | Uses Conan's [`cmake_find_package`](https://docs.conan.io/en/latest/integrations/build_system/cmake/cmake_find_package_generator.html) and (optionally) [`cmake_paths`](https://docs.conan.io/en/latest/integrations/build_system/cmake/cmake_paths_generator.html) generators. |
 | More Detail  | See [Example 1. Using Conan's cmake_find_package and cmake_paths generators](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/ConanIntegration.md#example-1-using-conans-cmake_find_package-and-cmake_paths-generators) |
  <!-- end include: conan_cmake_find_package. path: /conan_cmake_find_package/mdsource/conan_cmake_find_package.include.md -->
+
+### conan_cmake
+
+ <!-- include: conan_cmake. path: /conan_cmake/mdsource/conan_cmake.include.md -->
+| Topic        | Detail                                                       |
+| ------------ | ------------------------------------------------------------ |
+| Directory    | [conan_cmake](/conan_cmake/)                                 |
+| Purpose      | Demo how to build your tests using Conan's `cmake`  generator to download single headers for specific releases of ApprovalTests.cpp and Catch2.<br />The released headers of those dependencies will be downloaded inside your CMake build space, and will not be shown inside your IDE. |
+| Dependencies | ApprovalTests.cpp - downloaded automatically by Conan<br/>Catch2 - downloaded automatically by Conan |
+| Mechanism    | Uses Conan's [`cmake`](https://docs.conan.io/en/latest/integrations/build_system/cmake/cmake_generator.html) generator. |
+| More Detail  | See [Example 2. Using Conan's cmake generator](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/ConanIntegration.md#example-2-using-conans-cmake-generator) |
+ <!-- end include: conan_cmake. path: /conan_cmake/mdsource/conan_cmake.include.md -->
 
 ### cmake_invoking_conan
 
