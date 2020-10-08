@@ -4,6 +4,8 @@ project(develop_approvaltests)
 
 enable_testing()
 
+set(CMAKE_VERBOSE_MAKEFILE off)
+
 # -------------------------------------------------------------------
 # boost
 # This will be used by find_package() in ApprovalTests.cpp/tests/Boost_Tests
@@ -54,9 +56,12 @@ add_subdirectory(
 )
 
 if ("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
-    # Turn off some checks for extensions needed for Boost.ut
+    # Turn off some checks off for boost.ut
     target_compile_options(boost.ut INTERFACE
             -Wno-c99-extensions # Needed for Boost.ut, at least in v1.1.6
+            -Wno-documentation-unknown-command # unknown command tag name \userguide
+            -Wno-weak-vtables
+            -Wno-comma # See https://github.com/boost-ext/ut/issues/398
             )
 endif()
 
