@@ -1,6 +1,7 @@
 ApprovalTests.cpp
 boost
 Catch2
+cpputest
 doctest
 fmt
 googletest
