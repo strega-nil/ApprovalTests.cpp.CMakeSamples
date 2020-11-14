@@ -12,5 +12,5 @@
 #   dotnet tool update  -g MarkdownSnippets.Tool
 
 ./create_markdown.py
-dotnet tool update  -g MarkdownSnippets.Tool
+#dotnet tool update  -g MarkdownSnippets.Tool
 mdsnippets || exit 1
