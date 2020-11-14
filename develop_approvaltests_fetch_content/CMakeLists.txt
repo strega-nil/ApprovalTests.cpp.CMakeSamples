@@ -6,6 +6,12 @@ enable_testing()
 
 set(CMAKE_VERBOSE_MAKEFILE off)
 
+# Prevent ctest creating cluttering up CLion with nearly 30 CTest targets
+# (Continuous, ContinuousBuild etc) when it does:
+#   include(CTest)
+# This hack taken from https://stackoverflow.com/a/57240389/104370
+set_property(GLOBAL PROPERTY CTEST_TARGETS_ADDED 1) # hack to prevent CTest added targets
+
 # Needs CMake 3.14 or above
 include(FetchContent)
 
@@ -33,11 +39,6 @@ FetchContent_MakeAvailable(Catch2)
 # -------------------------------------------------------------------
 # CppUTest
 message(NOTICE "Fetching cpputest...")
-# Prevent CppUTest creating cluttering up CLion with nearly 30 CTest targets
-# (Continuous, ContinuousBuild etc) when it does:
-#   include(CTest)
-# This hack taken from https://stackoverflow.com/a/57240389/104370
-set_property(GLOBAL PROPERTY CTEST_TARGETS_ADDED 1) # hack to prevent CTest added targets
 FetchContent_Declare(cpputest
         GIT_REPOSITORY https://github.com/cpputest/cpputest.git
         GIT_TAG v4.0)
