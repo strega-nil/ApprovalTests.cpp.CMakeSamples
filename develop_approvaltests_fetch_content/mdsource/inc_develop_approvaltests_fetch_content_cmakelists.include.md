@@ -19,11 +19,23 @@ set_property(GLOBAL PROPERTY CTEST_TARGETS_ADDED 1) # hack to prevent CTest adde
 include(FetchContent)
 
 # -------------------------------------------------------------------
+# Program Version Numbers - and/or commit IDs
+# Oldest Boost in dl.bintray.com is 1.63.0
+set(BoostVersion "1.74.0") # 1.63.0 ... 1.74.0
+set(Catch2Version "v2.13.3") # v2.3.0 ... v2.13.3
+set(CppUTestVersion "v4.0") # v4.0 ... latest-passing-build
+set(DocTestVersion "2.4.1") #  2.3.4 ... 2.4.1
+set(FmtVersion "7.1.2") # 6.0.0 ... 7.1.2
+set(GoogleTestVersion "release-1.10.0") # release-1.8.0 ... release-1.10.0
+set(UtVersion "v1.1.8") # 1.1.7 ... 1.1.8
+
+# -------------------------------------------------------------------
 # boost
 message(NOTICE "Fetching Boost...")
+string(REPLACE . _ BoostVersionUnderscored ${BoostVersion})
 FetchContent_Declare(
         Boost
-        URL https://dl.bintray.com/boostorg/release/1.74.0/source/boost_1_74_0.tar.gz
+        URL https://dl.bintray.com/boostorg/release/${BoostVersion}/source/boost_${BoostVersionUnderscored}.tar.gz
 )
 FetchContent_MakeAvailable(Boost)
 # This is needed because there is not a CMakeLists.txt in the Boost download,
@@ -36,7 +48,7 @@ message(NOTICE "Fetching Catch2...")
 set(CATCH_BUILD_TESTING OFF CACHE BOOL "")
 FetchContent_Declare(Catch2
         GIT_REPOSITORY https://github.com/catchorg/Catch2.git
-        GIT_TAG v2.11.1)
+        GIT_TAG ${Catch2Version})
 FetchContent_MakeAvailable(Catch2)
 
 # -------------------------------------------------------------------
@@ -44,7 +56,7 @@ FetchContent_MakeAvailable(Catch2)
 message(NOTICE "Fetching cpputest...")
 FetchContent_Declare(cpputest
         GIT_REPOSITORY https://github.com/cpputest/cpputest.git
-        GIT_TAG v4.0)
+        GIT_TAG ${CppUTestVersion})
 FetchContent_MakeAvailable(cpputest)
 
 # -------------------------------------------------------------------
@@ -52,8 +64,8 @@ FetchContent_MakeAvailable(cpputest)
 message(NOTICE "Fetching doctest...")
 FetchContent_Declare(
         doctest
-        GIT_REPOSITORY  https://github.com/onqtam/doctest
-        GIT_TAG         2.4.0
+        GIT_REPOSITORY  https://github.com/onqtam/doctest.git
+        GIT_TAG         ${DocTestVersion}
 )
 FetchContent_MakeAvailable(doctest)
 set_target_properties(doctest_with_main PROPERTIES FOLDER "external")
@@ -64,7 +76,7 @@ message(NOTICE "Fetching fmt...")
 set(CATCH_BUILD_TESTING OFF CACHE BOOL "")
 FetchContent_Declare(fmt
         GIT_REPOSITORY https://github.com/fmtlib/fmt.git
-        GIT_TAG 6.2.0)
+        GIT_TAG ${FmtVersion})
 FetchContent_MakeAvailable(fmt)
 
 # -------------------------------------------------------------------
@@ -75,7 +87,7 @@ message(NOTICE "Fetching googletest...")
 set(gtest_force_shared_crt ON CACHE BOOL "" )
 FetchContent_Declare(googletest
         GIT_REPOSITORY https://github.com/abseil/googletest.git
-        GIT_TAG release-1.8.1)
+        GIT_TAG ${GoogleTestVersion})
 FetchContent_MakeAvailable(googletest)
 
 # -------------------------------------------------------------------
@@ -86,7 +98,7 @@ set(BUILD_EXAMPLES OFF CACHE BOOL "")
 set(BUILD_TESTS OFF CACHE BOOL "")
 FetchContent_Declare(boost.ut
         GIT_REPOSITORY https://github.com/boost-ext/ut.git
-        GIT_TAG v1.1.7)
+        GIT_TAG ${UtVersion})
 FetchContent_MakeAvailable(boost.ut)
 
 if ("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
