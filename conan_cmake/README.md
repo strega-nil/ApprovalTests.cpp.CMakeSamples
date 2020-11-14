@@ -15,7 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 | Dependencies | ApprovalTests.cpp - downloaded automatically by Conan<br/>Catch2 - downloaded automatically by Conan |
 | Mechanism    | Uses Conan's [`cmake`](https://docs.conan.io/en/latest/integrations/build_system/cmake/cmake_generator.html) generator. |
 | More Detail  | See [Example 2. Using Conan's cmake generator](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/ConanIntegration.md#example-2-using-conans-cmake-generator) |
- <!-- end include: conan_cmake. path: /conan_cmake/mdsource/conan_cmake.include.md -->
+ <!-- endInclude -->
 
 The conanfile.txt file is:
 
@@ -30,7 +30,7 @@ approvaltests.cpp/8.8.0
 cmake
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake/conanfile.txt' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: inc_conan_cmake_conanfile. path: /conan_cmake/mdsource/inc_conan_cmake_conanfile.include.md -->
+ <!-- endInclude -->
 
 The top-level CMakeLists.txt file is:
 
@@ -51,7 +51,7 @@ enable_testing()
 add_subdirectory(tests)
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: inc_conan_cmake_cmakelists. path: /conan_cmake/mdsource/inc_conan_cmake_cmakelists.include.md -->
+ <!-- endInclude -->
 
 And the CMakeLists.txt that builds the tests is:
 
@@ -79,7 +79,7 @@ add_test(
         COMMAND tests)
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake/tests/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: inc_conan_cmake_tests_cmakelists. path: /conan_cmake/mdsource/inc_conan_cmake_tests_cmakelists.include.md -->
+ <!-- endInclude -->
 
 The build script is:
 
@@ -91,9 +91,9 @@ The build script is:
 mkdir -p build
 cd       build
 conan install ..
-cmake  ..
+cmake -DCMAKE_BUILD_TYPE=Debug ..
 cmake --build .
-ctest .
+ctest ctest --output-on-failure . -C Debug
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./conan_cmake/build.sh' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: inc_conan_cmake_build. path: /conan_cmake/mdsource/inc_conan_cmake_build.include.md -->
+ <!-- endInclude -->

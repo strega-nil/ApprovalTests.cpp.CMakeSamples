@@ -19,7 +19,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [conan_cmake](#conan_cmake)
     * [cmake_invoking_conan](#cmake_invoking_conan)
   * [Developing ApprovalTests.cpp with CMake](#developing-approvaltestscpp-with-cmake)
-    * [develop_approvaltests](#develop_approvaltests)<!-- endtoc -->
+    * [develop_approvaltests](#develop_approvaltests)<!-- endToc -->
 
 CMake code for various scenarios, for including in the ApprovalTests.cpp cmake docs, and for copying as templates for new projects.  
 
@@ -35,7 +35,7 @@ CMake code for various scenarios, for including in the ApprovalTests.cpp cmake d
 | Dependencies | ApprovalTests.cpp - cloned on your machine<br />Catch2 - cloned on your machine |
 | Mechanism    | Uses CMake's [`add_subdirectory()`](https://cmake.org/cmake/help/latest/command/add_subdirectory.html) |
 | More Detail  | See [Use own ApprovalTests.cpp and Catch2 clones](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/CMakeIntegration.md#use-own-approvaltestscpp-and-catch2-clones) |
- <!-- end include: add_subdirectory_approvaltests_catch2. path: /add_subdirectory_approvaltests_catch2/mdsource/add_subdirectory_approvaltests_catch2.include.md -->
+ <!-- endInclude -->
 
 ### fetch_content_approvaltests
 
@@ -47,7 +47,7 @@ CMake code for various scenarios, for including in the ApprovalTests.cpp cmake d
 | Dependencies | ApprovalTests.cpp - cloned automatically by CMake<br />Catch2 - the version in the pprovalTests.cpp repo will be used |
 | Mechanism    | Uses CMake's [`FetchContent`](https://cmake.org/cmake/help/latest/module/FetchContent.html) module. |
 | More Detail  | See [Make CMake clone ApprovalTests.cpp](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/CMakeIntegration.md#make-cmake-clone-approvaltestscpp) |
- <!-- end include: fetch_content_approvaltests. path: /fetch_content_approvaltests/mdsource/fetch_content_approvaltests.include.md -->
+ <!-- endInclude -->
 
 ### fetch_content_approvaltests_catch2
 
@@ -59,7 +59,7 @@ CMake code for various scenarios, for including in the ApprovalTests.cpp cmake d
 | Dependencies | ApprovalTests.cpp - cloned automatically by CMake<br />Catch2 - cloned automatically by CMake |
 | Mechanism    | Uses CMake's [`FetchContent`](https://cmake.org/cmake/help/latest/module/FetchContent.html) module. |
 | More Detail  | See [Make CMake clone ApprovalTests.cpp and Catch2](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/CMakeIntegration.md#make-cmake-clone-approvaltestscpp-and-catch2) |
- <!-- end include: fetch_content_approvaltests_catch2. path: /fetch_content_approvaltests_catch2/mdsource/fetch_content_approvaltests_catch2.include.md -->
+ <!-- endInclude -->
 
 ## Using ApprovalTests.cpp with CMake and Conan
 
@@ -73,7 +73,7 @@ CMake code for various scenarios, for including in the ApprovalTests.cpp cmake d
 | Dependencies | ApprovalTests.cpp - downloaded automatically by Conan<br/>Catch2 - downloaded automatically by Conan |
 | Mechanism    | Uses Conan's [`cmake_find_package`](https://docs.conan.io/en/latest/integrations/build_system/cmake/cmake_find_package_generator.html) and (optionally) [`cmake_paths`](https://docs.conan.io/en/latest/integrations/build_system/cmake/cmake_paths_generator.html) generators. |
 | More Detail  | See [Example 1. Using Conan's cmake_find_package and cmake_paths generators](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/ConanIntegration.md#example-1-using-conans-cmake_find_package-and-cmake_paths-generators) |
- <!-- end include: conan_cmake_find_package. path: /conan_cmake_find_package/mdsource/conan_cmake_find_package.include.md -->
+ <!-- endInclude -->
 
 ### conan_cmake
 
@@ -85,7 +85,7 @@ CMake code for various scenarios, for including in the ApprovalTests.cpp cmake d
 | Dependencies | ApprovalTests.cpp - downloaded automatically by Conan<br/>Catch2 - downloaded automatically by Conan |
 | Mechanism    | Uses Conan's [`cmake`](https://docs.conan.io/en/latest/integrations/build_system/cmake/cmake_generator.html) generator. |
 | More Detail  | See [Example 2. Using Conan's cmake generator](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/ConanIntegration.md#example-2-using-conans-cmake-generator) |
- <!-- end include: conan_cmake. path: /conan_cmake/mdsource/conan_cmake.include.md -->
+ <!-- endInclude -->
 
 ### cmake_invoking_conan
 
@@ -97,7 +97,7 @@ CMake code for various scenarios, for including in the ApprovalTests.cpp cmake d
 | Dependencies | ApprovalTests.cpp - downloaded automatically by CMake invoking Conan<br/>Catch2 - downloaded automatically by CMake invoking Conan |
 | Mechanism    | Uses the [cmake-conan](https://github.com/conan-io/cmake-conan) CMake module to invoke Conan automatically from within CMake. |
 | More Detail  | See [Example 3. Making CMake invoke Conan](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/ConanIntegration.md#example-3-making-cmake-invoke-conan) |
- <!-- end include: cmake_invoking_conan. path: /cmake_invoking_conan/mdsource/cmake_invoking_conan.include.md -->
+ <!-- endInclude -->
 
 ## Developing ApprovalTests.cpp with CMake
 
@@ -111,5 +111,5 @@ CMake code for various scenarios, for including in the ApprovalTests.cpp cmake d
 | Dependencies | ApprovalTests.cpp - cloned on your machine<br />All its dependencies also cloned on your machine |
 | Mechanism    | Uses CMake's [`find_package()`](https://cmake.org/cmake/help/latest/command/find_package.html) for finding boost, and [`add_subdirectory()`](https://cmake.org/cmake/help/latest/command/add_subdirectory.html) for everything else. |
 | More Detail  | See [Developing ApprovalTests.cpp with test framework sources](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/CMakeIntegration.md#developing-approvaltestscpp-with-test-framework-sources) |
- <!-- end include: develop_approvaltests. path: /develop_approvaltests/mdsource/develop_approvaltests.include.md -->
+ <!-- endInclude -->
 

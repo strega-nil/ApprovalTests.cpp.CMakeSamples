@@ -15,7 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 | Dependencies | ApprovalTests.cpp - downloaded automatically by CMake invoking Conan<br/>Catch2 - downloaded automatically by CMake invoking Conan |
 | Mechanism    | Uses the [cmake-conan](https://github.com/conan-io/cmake-conan) CMake module to invoke Conan automatically from within CMake. |
 | More Detail  | See [Example 3. Making CMake invoke Conan](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/ConanIntegration.md#example-3-making-cmake-invoke-conan) |
- <!-- end include: cmake_invoking_conan. path: /cmake_invoking_conan/mdsource/cmake_invoking_conan.include.md -->
+ <!-- endInclude -->
 
 The conanfile.txt file is:
 
@@ -32,7 +32,7 @@ approvaltests.cpp/8.8.0
 # CMake code will take care of that for us.
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./cmake_invoking_conan/conanfile.txt' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: inc_cmake_invoking_conan_conanfile. path: /cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_conanfile.include.md -->
+ <!-- endInclude -->
 
 There is a CMake file called `CMake/Conan.cmake` which contains instructions for downloading a specific version of the cmake-conan CMake module:
 
@@ -64,7 +64,7 @@ conan_cmake_run(
 endmacro()
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./cmake_invoking_conan/CMake/Conan.cmake' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: inc_cmake_invoking_conan_CMake_conan. path: /cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_CMake_conan.include.md -->
+ <!-- endInclude -->
  
 The top-level CMakeLists.txt file includes the above `CMake/Conan.cmake` file, and runs the macro that it contained:
 
@@ -84,7 +84,7 @@ enable_testing()
 add_subdirectory(tests)
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./cmake_invoking_conan/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: inc_cmake_invoking_conan_cmakelists. path: /cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_cmakelists.include.md -->
+ <!-- endInclude -->
 
 And the CMakeLists.txt that builds the tests is:
 
@@ -112,7 +112,7 @@ add_test(
         COMMAND tests)
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./cmake_invoking_conan/tests/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: inc_cmake_invoking_conan_tests_cmakelists. path: /cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_tests_cmakelists.include.md -->
+ <!-- endInclude -->
 
 The build script is:
 
@@ -125,9 +125,9 @@ mkdir -p build
 cd       build
 # Note that we do not need to invoke conan.
 # However, we do need to say what build configuration we want.
-cmake  -DCMAKE_BUILD_TYPE=Debug ..
+cmake -DCMAKE_BUILD_TYPE=Debug ..
 cmake --build .
-ctest .
+ctest ctest --output-on-failure .
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./cmake_invoking_conan/build.sh' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: inc_cmake_invoking_conan_build. path: /cmake_invoking_conan/mdsource/inc_cmake_invoking_conan_build.include.md -->
+ <!-- endInclude -->

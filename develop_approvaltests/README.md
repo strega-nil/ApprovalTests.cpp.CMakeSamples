@@ -15,7 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 | Dependencies | ApprovalTests.cpp - cloned on your machine<br />All its dependencies also cloned on your machine |
 | Mechanism    | Uses CMake's [`find_package()`](https://cmake.org/cmake/help/latest/command/find_package.html) for finding boost, and [`add_subdirectory()`](https://cmake.org/cmake/help/latest/command/add_subdirectory.html) for everything else. |
 | More Detail  | See [Developing ApprovalTests.cpp with test framework sources](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/CMakeIntegration.md#developing-approvaltestscpp-with-test-framework-sources) |
- <!-- end include: develop_approvaltests. path: /develop_approvaltests/mdsource/develop_approvaltests.include.md -->
+ <!-- endInclude -->
 
 The top-level CMakeLists.txt file is:
 
@@ -28,6 +28,14 @@ project(develop_approvaltests)
 
 enable_testing()
 
+set(CMAKE_VERBOSE_MAKEFILE off)
+
+# Prevent ctest creating cluttering up CLion with nearly 30 CTest targets
+# (Continuous, ContinuousBuild etc) when it does:
+#   include(CTest)
+# This hack taken from https://stackoverflow.com/a/57240389/104370
+set_property(GLOBAL PROPERTY CTEST_TARGETS_ADDED 1) # hack to prevent CTest added targets
+
 # -------------------------------------------------------------------
 # boost
 # This will be used by find_package() in ApprovalTests.cpp/tests/Boost_Tests
@@ -39,6 +47,13 @@ set(CATCH_BUILD_TESTING OFF CACHE BOOL "")
 add_subdirectory(
         ../Catch2
         ${CMAKE_CURRENT_BINARY_DIR}/catch2_build
+)
+
+# -------------------------------------------------------------------
+# CppUTest
+add_subdirectory(
+        ../cpputest
+        ${CMAKE_CURRENT_BINARY_DIR}/cpputest_build
 )
 
 # -------------------------------------------------------------------
@@ -78,9 +93,12 @@ add_subdirectory(
 )
 
 if ("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
-    # Turn off some checks for extensions needed for Boost.ut
+    # Turn off some checks off for boost.ut
     target_compile_options(boost.ut INTERFACE
             -Wno-c99-extensions # Needed for Boost.ut, at least in v1.1.6
+            -Wno-documentation-unknown-command # unknown command tag name \userguide
+            -Wno-weak-vtables
+            -Wno-comma # See https://github.com/boost-ext/ut/issues/398
             )
 endif()
 
@@ -96,7 +114,7 @@ add_subdirectory(
 )
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./develop_approvaltests/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: inc_develop_approvaltests_cmakelists. path: /develop_approvaltests/mdsource/inc_develop_approvaltests_cmakelists.include.md -->
+ <!-- endInclude -->
 
 The build script is:
 
@@ -107,9 +125,9 @@ The build script is:
 
 mkdir -p build
 cd       build
-cmake  ..
+cmake -DCMAKE_BUILD_TYPE=Debug ..
 cmake --build .
-ctest .
+ctest ctest --output-on-failure . -C Debug
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./develop_approvaltests/build.sh' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: inc_develop_approvaltests_build. path: /develop_approvaltests/mdsource/inc_develop_approvaltests_build.include.md -->
+ <!-- endInclude -->

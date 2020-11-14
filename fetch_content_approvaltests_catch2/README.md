@@ -15,7 +15,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
 | Dependencies | ApprovalTests.cpp - cloned automatically by CMake<br />Catch2 - cloned automatically by CMake |
 | Mechanism    | Uses CMake's [`FetchContent`](https://cmake.org/cmake/help/latest/module/FetchContent.html) module. |
 | More Detail  | See [Make CMake clone ApprovalTests.cpp and Catch2](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/CMakeIntegration.md#make-cmake-clone-approvaltestscpp-and-catch2) |
- <!-- end include: fetch_content_approvaltests_catch2. path: /fetch_content_approvaltests_catch2/mdsource/fetch_content_approvaltests_catch2.include.md -->
+ <!-- endInclude -->
 
 The top-level CMakeLists.txt file is:
 
@@ -33,7 +33,7 @@ add_subdirectory(dependencies)
 add_subdirectory(tests)
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./fetch_content_approvaltests_catch2/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: inc_fetch_content_approvaltests_catch2_cmakelists. path: /fetch_content_approvaltests_catch2/mdsource/inc_fetch_content_approvaltests_catch2_cmakelists.include.md -->
+ <!-- endInclude -->
 
 The CMakeLists.txt to pull in dependencies is as follows: note that you can quote tags, branch names or commit IDs to control the exact version to be used:
 
@@ -60,7 +60,7 @@ FetchContent_Declare(Catch2
 FetchContent_MakeAvailable(Catch2)
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./fetch_content_approvaltests_catch2/dependencies/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: inc_fetch_content_approvaltests_catch2_dependencies_cmakelists. path: /fetch_content_approvaltests_catch2/mdsource/inc_fetch_content_approvaltests_catch2_dependencies_cmakelists.include.md -->
+ <!-- endInclude -->
 
 And the CMakeLists.txt that builds the tests is:
 
@@ -81,7 +81,7 @@ add_test(
         COMMAND tests)
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./fetch_content_approvaltests_catch2/tests/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: inc_fetch_content_approvaltests_catch2_tests_cmakelists. path: /fetch_content_approvaltests_catch2/mdsource/inc_fetch_content_approvaltests_catch2_tests_cmakelists.include.md -->
+ <!-- endInclude -->
 
 The build script is:
 
@@ -92,9 +92,9 @@ The build script is:
 
 mkdir -p build
 cd       build
-cmake  ..
+cmake -DCMAKE_BUILD_TYPE=Debug ..
 cmake --build .
-ctest .
+ctest ctest --output-on-failure . -C Debug
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./fetch_content_approvaltests_catch2/build.sh' title='File snippet was copied from'>snippet source</a></sup>
- <!-- end include: inc_fetch_content_approvaltests_catch2_build. path: /fetch_content_approvaltests_catch2/mdsource/inc_fetch_content_approvaltests_catch2_build.include.md -->
+ <!-- endInclude -->
