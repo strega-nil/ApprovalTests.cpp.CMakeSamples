@@ -51,3 +51,10 @@ FetchContent_Declare(googletest
 FetchContent_MakeAvailable(googletest)
 
 # -------------------------------------------------------------------
+message(NOTICE "Fetching boost.ut...")
+FetchContent_Declare(boost.ut
+        GIT_REPOSITORY https://github.com/boost-ext/ut.git
+        GIT_TAG v1.1.7)
+FetchContent_MakeAvailable(boost.ut)
+
+# -------------------------------------------------------------------
