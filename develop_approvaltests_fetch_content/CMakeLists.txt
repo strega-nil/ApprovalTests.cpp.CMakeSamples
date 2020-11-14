@@ -16,11 +16,16 @@ set_property(GLOBAL PROPERTY CTEST_TARGETS_ADDED 1) # hack to prevent CTest adde
 include(FetchContent)
 
 # -------------------------------------------------------------------
+# Program Version Numbers
+set(BoostVersion "1.74.0")
+
+# -------------------------------------------------------------------
 # boost
 message(NOTICE "Fetching Boost...")
+string(REPLACE . _ BoostVersionUnderscored ${BoostVersion})
 FetchContent_Declare(
         Boost
-        URL https://dl.bintray.com/boostorg/release/1.74.0/source/boost_1_74_0.tar.gz
+        URL https://dl.bintray.com/boostorg/release/${BoostVersion}/source/boost_${BoostVersionUnderscored}.tar.gz
 )
 FetchContent_MakeAvailable(Boost)
 # This is needed because there is not a CMakeLists.txt in the Boost download,
