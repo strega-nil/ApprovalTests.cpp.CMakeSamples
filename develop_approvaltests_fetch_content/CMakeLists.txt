@@ -22,7 +22,7 @@ set(Catch2Version "v2.13.3") # v2.3.0 ... v2.13.3
 set(CppUTestVersion "v4.0")
 set(DocTestVersion "2.4.1") #  2.3.4 ... 2.4.1
 set(FmtVersion "7.1.2") # 6.0.0 ... 7.1.2
-set(GoogleTestVersion "release-1.8.1")
+set(GoogleTestVersion "release-1.10.0") # release-1.8.0 ... release-1.10.0
 set(UtVersion "v1.1.8") # 1.1.7 ... 1.1.8
 
 # -------------------------------------------------------------------
