@@ -17,9 +17,10 @@ include(FetchContent)
 
 # -------------------------------------------------------------------
 # Program Version Numbers - and/or commit IDs
-set(BoostVersion "1.74.0")
+# Oldest Boost in dl.bintray.com is 1.63.0
+set(BoostVersion "1.74.0") # 1.63.0 ... 1.74.0
 set(Catch2Version "v2.13.3") # v2.3.0 ... v2.13.3
-set(CppUTestVersion "v4.0")
+set(CppUTestVersion "v4.0") # v4.0 ... latest-passing-build
 set(DocTestVersion "2.4.1") #  2.3.4 ... 2.4.1
 set(FmtVersion "7.1.2") # 6.0.0 ... 7.1.2
 set(GoogleTestVersion "release-1.10.0") # release-1.8.0 ... release-1.10.0
