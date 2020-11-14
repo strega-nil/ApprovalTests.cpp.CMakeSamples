@@ -6,4 +6,4 @@ cd       build
 # However, we do need to say what build configuration we want.
 cmake -DCMAKE_BUILD_TYPE=Debug ..
 cmake --build .
-ctest .
+ctest ctest --output-on-failure .

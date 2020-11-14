@@ -4,4 +4,4 @@ mkdir -p build
 cd       build
 cmake -DCMAKE_BUILD_TYPE=Debug ..
 cmake --build .
-ctest . -C Debug
+ctest ctest --output-on-failure . -C Debug
