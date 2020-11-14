@@ -24,6 +24,7 @@ set(BoostVersion
         "1.74.0")
 
 # Tested with versions in range: v2.3.0 ... v2.13.3
+# Does not work with devel, and v3 releases
 set(Catch2Version
         "v2.13.3")
 
