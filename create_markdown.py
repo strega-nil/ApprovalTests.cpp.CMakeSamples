@@ -62,6 +62,10 @@ def show_for_markdown(root, file):
     file_extension = os.path.splitext(file)[1]
     syntax_name = get_syntax_name(file_base_name, file_extension)
 
+    output_dir=f'{top_level}/mdsource'
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
     output_file = f'{top_level}/mdsource/inc_{dir_name}_{file_base_name.lower()}.include.md'
     print(output_file)
     with open(output_file, 'w') as s:
