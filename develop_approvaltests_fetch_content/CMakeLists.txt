@@ -18,12 +18,12 @@ include(FetchContent)
 # -------------------------------------------------------------------
 # Program Version Numbers - and/or commit IDs
 set(BoostVersion "1.74.0")
-set(Catch2Version "v2.11.1")
+set(Catch2Version "v2.13.3") # v2.3.0 ... v2.13.3
 set(CppUTestVersion "v4.0")
-set(DocTestVersion "2.4.0")
-set(FmtVersion "6.2.0")
+set(DocTestVersion "2.4.1") #  2.3.4 ... 2.4.1
+set(FmtVersion "7.1.2") # 6.0.0 ... 7.1.2
 set(GoogleTestVersion "release-1.8.1")
-set(UtVersion "v1.1.7")
+set(UtVersion "v1.1.8") # 1.1.7 ... 1.1.8
 
 # -------------------------------------------------------------------
 # boost
@@ -60,7 +60,7 @@ FetchContent_MakeAvailable(cpputest)
 message(NOTICE "Fetching doctest...")
 FetchContent_Declare(
         doctest
-        GIT_REPOSITORY  https://github.com/onqtam/doctest
+        GIT_REPOSITORY  https://github.com/onqtam/doctest.git
         GIT_TAG         ${DocTestVersion}
 )
 FetchContent_MakeAvailable(doctest)
