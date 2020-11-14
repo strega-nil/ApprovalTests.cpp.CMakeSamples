@@ -18,6 +18,12 @@ include(FetchContent)
 # -------------------------------------------------------------------
 # Program Version Numbers
 set(BoostVersion "1.74.0")
+set(Catch2Version "2.11.1")
+set(CppUTestVersion "4.0")
+set(DocTestVersion "2.4.0")
+set(FmtVersion "6.2.0")
+set(GoogleTestVersion "1.8.1")
+set(UtVersion "1.1.7")
 
 # -------------------------------------------------------------------
 # boost
@@ -38,7 +44,7 @@ message(NOTICE "Fetching Catch2...")
 set(CATCH_BUILD_TESTING OFF CACHE BOOL "")
 FetchContent_Declare(Catch2
         GIT_REPOSITORY https://github.com/catchorg/Catch2.git
-        GIT_TAG v2.11.1)
+        GIT_TAG v${Catch2Version})
 FetchContent_MakeAvailable(Catch2)
 
 # -------------------------------------------------------------------
@@ -46,7 +52,7 @@ FetchContent_MakeAvailable(Catch2)
 message(NOTICE "Fetching cpputest...")
 FetchContent_Declare(cpputest
         GIT_REPOSITORY https://github.com/cpputest/cpputest.git
-        GIT_TAG v4.0)
+        GIT_TAG v${CppUTestVersion})
 FetchContent_MakeAvailable(cpputest)
 
 # -------------------------------------------------------------------
@@ -55,7 +61,7 @@ message(NOTICE "Fetching doctest...")
 FetchContent_Declare(
         doctest
         GIT_REPOSITORY  https://github.com/onqtam/doctest
-        GIT_TAG         2.4.0
+        GIT_TAG         ${DocTestVersion}
 )
 FetchContent_MakeAvailable(doctest)
 set_target_properties(doctest_with_main PROPERTIES FOLDER "external")
@@ -66,7 +72,7 @@ message(NOTICE "Fetching fmt...")
 set(CATCH_BUILD_TESTING OFF CACHE BOOL "")
 FetchContent_Declare(fmt
         GIT_REPOSITORY https://github.com/fmtlib/fmt.git
-        GIT_TAG 6.2.0)
+        GIT_TAG ${FmtVersion})
 FetchContent_MakeAvailable(fmt)
 
 # -------------------------------------------------------------------
@@ -77,7 +83,7 @@ message(NOTICE "Fetching googletest...")
 set(gtest_force_shared_crt ON CACHE BOOL "" )
 FetchContent_Declare(googletest
         GIT_REPOSITORY https://github.com/abseil/googletest.git
-        GIT_TAG release-1.8.1)
+        GIT_TAG release-${GoogleTestVersion})
 FetchContent_MakeAvailable(googletest)
 
 # -------------------------------------------------------------------
@@ -88,7 +94,7 @@ set(BUILD_EXAMPLES OFF CACHE BOOL "")
 set(BUILD_TESTS OFF CACHE BOOL "")
 FetchContent_Declare(boost.ut
         GIT_REPOSITORY https://github.com/boost-ext/ut.git
-        GIT_TAG v1.1.7)
+        GIT_TAG v${UtVersion})
 FetchContent_MakeAvailable(boost.ut)
 
 if ("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
