@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# Force execution to halt if there are any errors in this script:
+set -e
+set -o pipefail
+
 mkdir -p build
 cd       build
 # Note that we do not need to invoke conan.
