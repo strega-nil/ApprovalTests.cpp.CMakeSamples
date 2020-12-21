@@ -28,28 +28,24 @@ jobs:
             c-compiler: 'clang-6.0'
             cxx-compiler: 'clang++-6.0'
             generator: '"Unix Makefiles"'
-            relative_build_dir_path: ''
 
           - job-name: 'clang8'
             os-version: '18.04'
             c-compiler: 'clang-8'
             cxx-compiler: 'clang++-8'
             generator: '"Unix Makefiles"'
-            relative_build_dir_path: ''
 
           - job-name: 'clang9'
             os-version: '18.04'
             c-compiler: 'clang-9'
             cxx-compiler: 'clang++-9'
             generator: '"Unix Makefiles"'
-            relative_build_dir_path: ''
 
           - job-name: 'clang10'
             os-version: '20.04'
             c-compiler: 'clang-10'
             cxx-compiler: 'clang++-10'
             generator: '"Unix Makefiles"'
-            relative_build_dir_path: ''
 
           # maybe add gcc5 - which was tested in Travis
           # maybe add gcc5 - which was tested in Travis
@@ -59,53 +55,45 @@ jobs:
             c-compiler: 'gcc-7'
             cxx-compiler: 'g++-7'
             generator: '"Unix Makefiles"'
-            relative_build_dir_path: ''
 
           - job-name: 'gcc8'
             os-version: '18.04'
             c-compiler: 'gcc-8'
             cxx-compiler: 'g++-8'
             generator: '"Unix Makefiles"'
-            relative_build_dir_path: ''
 
           - job-name: 'gcc9'
             os-version: '18.04'
             c-compiler: 'gcc-9'
             cxx-compiler: 'g++-9'
             generator: '"Unix Makefiles"'
-            relative_build_dir_path: ''
 
           - job-name: 'gcc10'
             os-version: '18.04'
             c-compiler: 'gcc-10'
             cxx-compiler: 'g++-10'
             generator: '"Unix Makefiles"'
-            relative_build_dir_path: ''
 
           - job-name: 'gcc10 unity'
             os-version: '18.04'
             c-compiler: 'gcc-10'
             cxx-compiler: 'g++-10'
             generator: '"Unix Makefiles" -DCMAKE_UNITY_BUILD=yes -DCMAKE_UNITY_BUILD_BATCH_SIZE=50'
-            relative_build_dir_path: ''
 
           - job-name: 'gcc10 ninja'
             os-version: '18.04'
             c-compiler: 'gcc-10'
             cxx-compiler: 'g++-10'
             generator: '"Ninja"'
-            relative_build_dir_path: '../'
 
           - job-name: 'gcc10 ninja-unity'
             os-version: '18.04'
             c-compiler: 'gcc-10'
             cxx-compiler: 'g++-10'
             generator: '"Ninja" -DCMAKE_UNITY_BUILD=yes -DCMAKE_UNITY_BUILD_BATCH_SIZE=50'
-            relative_build_dir_path: ''
 
     name: Linux ${{ matrix.job-name }}
     env:
-      BUILD_PATH: ${{ github.workspace }}/${{ matrix.relative_build_dir_path }}build_space
       CC: ${{ matrix.c-compiler }}
       CXX: ${{ matrix.cxx-compiler }}
     steps:
@@ -135,29 +123,24 @@ jobs:
             os-version: '10.15'
             xcode-version: '10.3'
             generator: '"Unix Makefiles"'
-            relative_build_dir_path: ''
 
           - job-name: xcode-11.7
             os-version: '10.15'
             xcode-version: '11.7'
             generator: '"Unix Makefiles"'
-            relative_build_dir_path: ''
 
           - job-name: xcode-12.2
             os-version: '10.15'
             xcode-version: '12.2'
             generator: '"Unix Makefiles"'
-            relative_build_dir_path: ''
 
           - job-name: xcode-11.7-ninja
             xcode-version: '11.7'
             os-version: '10.15'
             generator: '"Ninja"'
-            relative_build_dir_path: '../'
 
     name: macOS ${{ matrix.job-name }}
     env:
-      BUILD_PATH: ${{ github.workspace }}/${{ matrix.relative_build_dir_path }}build_space
       HOMEBREW_NO_ANALYTICS: 1
       HOMEBREW_NO_AUTO_UPDATE: 1
       HOMEBREW_NO_INSTALL_CLEANUP: 1
@@ -195,8 +178,6 @@ jobs:
             generator: '"Visual Studio 16 2019" -T "clangcl"'
 
     name: Windows ${{ matrix.job-name }}
-    env:
-      BUILD_PATH: ${{ github.workspace }}/build_space
     steps:
       - uses: actions/checkout@master
 
