@@ -2,6 +2,8 @@
 
 toc
 
+[![Build Status](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/workflows/build/badge.svg?branch=main)](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/actions?query=branch%3Amain+workflow%3Abuild)
+
 CMake code for various scenarios, for including in the ApprovalTests.cpp cmake docs, and for copying as templates for new projects.  
 
 ## Using ApprovalTests.cpp with CMake
