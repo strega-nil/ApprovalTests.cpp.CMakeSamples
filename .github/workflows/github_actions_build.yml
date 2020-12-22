@@ -155,7 +155,7 @@ jobs:
       - uses: ./.github/workflows/build-all-samples
 
   Windows:
-    # if: false # Disable this platform temporarily
+    if: false # Disable windows builds, due to path length errors
     runs-on: windows-${{ matrix.os-version }}
     strategy:
       fail-fast: false
