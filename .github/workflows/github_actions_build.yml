@@ -106,7 +106,7 @@ jobs:
 #          sudo apt-get update -qq
 #          sudo apt-get install -y libboost-all-dev
 
-    - uses: ./.github/workflows/build-all-samples
+      - uses: ./.github/workflows/build-all-samples
 
   macOS:
     # if: false # Disable this platform temporarily
@@ -152,7 +152,7 @@ jobs:
 #        run: |
 #          brew install boost
 
-  - uses: ./.github/workflows/build-all-samples
+      - uses: ./.github/workflows/build-all-samples
 
   Windows:
     # if: false # Disable this platform temporarily
@@ -184,5 +184,5 @@ jobs:
 #          echo "BOOST_INCLUDEDIR=${boostroot}\include" >> ${env:GITHUB_ENV}
 #          echo "BOOST_LIBRARYDIR=${boostroot}\lib" >> ${env:GITHUB_ENV}
 
-    - uses: ./.github/workflows/build-all-samples
+      - uses: ./.github/workflows/build-all-samples
 
