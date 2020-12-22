@@ -1,0 +1,10 @@
+name: "MBuild all samples"
+description: "Build all samples"
+runs:
+  using: "composite"
+  steps:
+    - name: fetch_content_approvaltests
+      run: |
+        cd fetch_content_approvaltests
+        ./build.sh
+      shell: bash
