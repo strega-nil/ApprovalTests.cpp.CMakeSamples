@@ -112,7 +112,7 @@ jobs:
 #          sudo apt-get update -qq
 #          sudo apt-get install -y libboost-all-dev
 
-      - uses: ./.github/workflows/build-all-samples
+      - uses: ./.github/actions/build-all-samples
 
   macOS:
     # if: false # Disable this platform temporarily
@@ -164,7 +164,7 @@ jobs:
           python-version: '3.x'
       - uses: ./.github/actions/setup-conan
 
-      - uses: ./.github/workflows/build-all-samples
+      - uses: ./.github/actions/build-all-samples
 
   Windows:
     if: false # Disable windows builds, due to path length errors
@@ -202,5 +202,5 @@ jobs:
           python-version: '3.x'
       - uses: ./.github/actions/setup-conan
 
-      - uses: ./.github/workflows/build-all-samples
+      - uses: ./.github/actions/build-all-samples
 
