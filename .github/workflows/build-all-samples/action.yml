@@ -4,9 +4,27 @@ runs:
   using: "composite"
   steps:
 
-    - name: fetch_content_approvaltests
+    - name: cmake_invoking_conan
       run: |
-        cd fetch_content_approvaltests
+        cd cmake_invoking_conan
+        ./build.sh
+      shell: bash
+
+    - name: conan_cmake
+      run: |
+        cd conan_cmake
+        ./build.sh
+      shell: bash
+
+    - name: conan_cmake_find_package
+      run: |
+        cd conan_cmake_find_package
+        ./build.sh
+      shell: bash
+
+    - name: fetch_content_approvaltests_catch2
+      run: |
+        cd fetch_content_approvaltests_catch2
         ./build.sh
       shell: bash
 
