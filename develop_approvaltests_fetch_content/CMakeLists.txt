@@ -73,6 +73,11 @@ FetchContent_MakeAvailable(Catch2)
 # -------------------------------------------------------------------
 # CppUTest
 message(NOTICE "Fetching cpputest...")
+
+# Prevent build of CppUTest from generating thousands of lines of
+# -Wc++98-compat and -Wc++98-compat-pedantic warnings:
+set(C++11 ON CACHE BOOL "Compile with C++11 support")
+
 FetchContent_Declare(cpputest
         GIT_REPOSITORY https://github.com/cpputest/cpputest.git
         GIT_TAG ${CppUTestVersion})
