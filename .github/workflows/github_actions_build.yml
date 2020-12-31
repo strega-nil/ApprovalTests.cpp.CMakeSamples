@@ -108,7 +108,7 @@ jobs:
       - uses: ./.github/actions/setup-conan
       - name: setup conan profile
         run: |
-          conan profile show default
+          echo not running conan profile show default
 
       - uses: ./.github/actions/build-all-samples
 
@@ -194,7 +194,7 @@ jobs:
       - uses: ./.github/actions/setup-conan
       - name: setup conan profile
         run: |
-          conan profile show default
+          echo not running conan profile show default
 
       - uses: ./.github/actions/build-all-samples
 
