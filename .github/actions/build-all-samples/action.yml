@@ -37,10 +37,10 @@ runs:
 #   Running 2 test cases...
 #   *** No errors detected
 #   Test setup error:
-#        echo '--------------------------------------------------------------------------'
-#        git clone https://github.com/approvals/ApprovalTests.cpp.git
-#        pushd develop_approvaltests_fetch_content
-#        ./build.sh
-#        popd
+        echo '--------------------------------------------------------------------------'
+        git clone https://github.com/approvals/ApprovalTests.cpp.git
+        pushd develop_approvaltests_fetch_content
+        ./build.sh
+        popd
 
       shell: bash
