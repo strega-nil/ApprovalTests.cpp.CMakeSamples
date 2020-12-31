@@ -7,34 +7,34 @@ runs:
     - name: building sub-directories
       run: |
         echo '--------------------------------------------------------------------------'
-        pushdir cmake_invoking_conan
+        pushd cmake_invoking_conan
         ./build.sh
-        popdir
+        popd
 
         echo '--------------------------------------------------------------------------'
-        pushdir conan_cmake
+        pushd conan_cmake
         ./build.sh
-        popdir
+        popd
 
         echo '--------------------------------------------------------------------------'
-        pushdir conan_cmake_find_package
+        pushd conan_cmake_find_package
         ./build.sh
-        popdir
+        popd
 
         echo '--------------------------------------------------------------------------'
-        pushdir fetch_content_approvaltests_catch2
+        pushd fetch_content_approvaltests_catch2
         ./build.sh
-        popdir
+        popd
 
         echo '--------------------------------------------------------------------------'
-        pushdir fetch_content_approvaltests_catch2
+        pushd fetch_content_approvaltests_catch2
         ./build.sh
-        popdir
+        popd
 
         echo '--------------------------------------------------------------------------'
         git clone https://github.com/approvals/ApprovalTests.cpp.git
-        pushdir develop_approvaltests_fetch_content
+        pushd develop_approvaltests_fetch_content
         ./build.sh
-        popdir
+        popd
 
       shell: bash
