@@ -6,30 +6,35 @@ runs:
 
     - name: fetch_content_approvaltests_catch2
       run: |
+        echo '--------------------------------------------------------------------------'
         cd fetch_content_approvaltests_catch2
         ./build.sh
       shell: bash
 
     - name: fetch_content_approvaltests_catch2
       run: |
+        echo '--------------------------------------------------------------------------'
         cd fetch_content_approvaltests_catch2
         ./build.sh
       shell: bash
 
     - name: cmake_invoking_conan
       run: |
+        echo '--------------------------------------------------------------------------'
         cd cmake_invoking_conan
         ./build.sh
       shell: bash
 
     - name: conan_cmake
       run: |
+        echo '--------------------------------------------------------------------------'
         cd conan_cmake
         ./build.sh
       shell: bash
 
     - name: conan_cmake_find_package
       run: |
+        echo '--------------------------------------------------------------------------'
         cd conan_cmake_find_package
         ./build.sh
       shell: bash
