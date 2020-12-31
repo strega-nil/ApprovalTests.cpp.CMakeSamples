@@ -25,6 +25,13 @@ runs:
         ./build.sh
       shell: bash
 
+    - name: develop_approvaltests_fetch_content
+      run: |
+        echo '--------------------------------------------------------------------------'
+        cd develop_approvaltests_fetch_content
+        ./build.sh
+      shell: bash
+
     - name: fetch_content_approvaltests_catch2
       run: |
         echo '--------------------------------------------------------------------------'
