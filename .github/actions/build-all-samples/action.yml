@@ -22,17 +22,18 @@ runs:
         popdir
 
         echo '--------------------------------------------------------------------------'
+        pushdir fetch_content_approvaltests_catch2
+        ./build.sh
+        popdir
+
+        echo '--------------------------------------------------------------------------'
+        pushdir fetch_content_approvaltests_catch2
+        ./build.sh
+        popdir
+
+        echo '--------------------------------------------------------------------------'
         pushdir develop_approvaltests_fetch_content
         ./build.sh
         popdir
 
-        echo '--------------------------------------------------------------------------'
-        pushdir fetch_content_approvaltests_catch2
-        ./build.sh
-        popdir
-
-        echo '--------------------------------------------------------------------------'
-        pushdir fetch_content_approvaltests_catch2
-        ./build.sh
-        popdir
       shell: bash
