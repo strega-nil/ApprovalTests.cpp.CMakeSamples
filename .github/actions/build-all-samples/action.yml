@@ -4,44 +4,35 @@ runs:
   using: "composite"
   steps:
 
-    - name: cmake_invoking_conan
+    - name: building sub-directories
       run: |
         echo '--------------------------------------------------------------------------'
-        cd cmake_invoking_conan
+        pushdir cmake_invoking_conan
         ./build.sh
-      shell: bash
+        popdir
 
-    - name: conan_cmake
-      run: |
         echo '--------------------------------------------------------------------------'
-        cd conan_cmake
+        pushdir conan_cmake
         ./build.sh
-      shell: bash
+        popdir
 
-    - name: conan_cmake_find_package
-      run: |
         echo '--------------------------------------------------------------------------'
-        cd conan_cmake_find_package
+        pushdir conan_cmake_find_package
         ./build.sh
-      shell: bash
+        popdir
 
-    - name: develop_approvaltests_fetch_content
-      run: |
         echo '--------------------------------------------------------------------------'
-        cd develop_approvaltests_fetch_content
+        pushdir develop_approvaltests_fetch_content
         ./build.sh
-      shell: bash
+        popdir
 
-    - name: fetch_content_approvaltests_catch2
-      run: |
         echo '--------------------------------------------------------------------------'
-        cd fetch_content_approvaltests_catch2
+        pushdir fetch_content_approvaltests_catch2
         ./build.sh
-      shell: bash
+        popdir
 
-    - name: fetch_content_approvaltests_catch2
-      run: |
         echo '--------------------------------------------------------------------------'
-        cd fetch_content_approvaltests_catch2
+        pushdir fetch_content_approvaltests_catch2
         ./build.sh
+        popdir
       shell: bash
