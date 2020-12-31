@@ -106,6 +106,10 @@ jobs:
         with:
           python-version: '3.x'
       - uses: ./.github/actions/setup-conan
+      - name: setup conan profile
+        run: |
+#          conan profile new default --detect
+          conan profile show default
 
       - uses: ./.github/actions/build-all-samples
 
@@ -157,8 +161,7 @@ jobs:
       - name: setup conan profile
         run: |
           conan profile new default --detect
-#          conan profile update settings.compiler=apple-clang default
-#          conan profile update settings.compiler.libcxx=libc++ default
+          conan profile show default
 
       - uses: ./.github/actions/build-all-samples
 
@@ -190,6 +193,10 @@ jobs:
         with:
           python-version: '3.x'
       - uses: ./.github/actions/setup-conan
+      - name: setup conan profile
+        run: |
+#          conan profile new default --detect
+          conan profile show default
 
       - uses: ./.github/actions/build-all-samples
 
