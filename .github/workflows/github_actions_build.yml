@@ -156,8 +156,9 @@ jobs:
       - uses: ./.github/actions/setup-conan
       - name: setup conan profile
         run: |
-          conan profile update settings.compiler=apple-clang default
-          conan profile update settings.compiler.libcxx=libc++ default
+          conan profile new default --detect
+#          conan profile update settings.compiler=apple-clang default
+#          conan profile update settings.compiler.libcxx=libc++ default
 
       - uses: ./.github/actions/build-all-samples
 
