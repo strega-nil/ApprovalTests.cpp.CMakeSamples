@@ -32,6 +32,7 @@ runs:
         popdir
 
         echo '--------------------------------------------------------------------------'
+        git clone https://github.com/approvals/ApprovalTests.cpp.git
         pushdir develop_approvaltests_fetch_content
         ./build.sh
         popdir
