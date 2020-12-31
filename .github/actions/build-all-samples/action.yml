@@ -4,6 +4,18 @@ runs:
   using: "composite"
   steps:
 
+    - name: fetch_content_approvaltests_catch2
+      run: |
+        cd fetch_content_approvaltests_catch2
+        ./build.sh
+      shell: bash
+
+    - name: fetch_content_approvaltests_catch2
+      run: |
+        cd fetch_content_approvaltests_catch2
+        ./build.sh
+      shell: bash
+
     - name: cmake_invoking_conan
       run: |
         cd cmake_invoking_conan
@@ -21,16 +33,3 @@ runs:
         cd conan_cmake_find_package
         ./build.sh
       shell: bash
-
-    - name: fetch_content_approvaltests_catch2
-      run: |
-        cd fetch_content_approvaltests_catch2
-        ./build.sh
-      shell: bash
-
-    - name: fetch_content_approvaltests_catch2
-      run: |
-        cd fetch_content_approvaltests_catch2
-        ./build.sh
-      shell: bash
-
