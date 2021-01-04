@@ -9,4 +9,4 @@ cd       build
 conan install ..
 cmake -DCMAKE_BUILD_TYPE=Debug ..
 cmake --build .
-ctest ctest --output-on-failure . -C Debug
+ctest --output-on-failure . -C Debug
