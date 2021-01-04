@@ -106,6 +106,9 @@ jobs:
         with:
           python-version: '3.x'
       - uses: ./.github/actions/setup-conan
+      - name: adjust conan profile to use new ABI for gcc (see issue #1)
+        if: contains(matrix.job-name, 'gcc')
+        run: conan profile update settings.compiler.libcxx=libstdc++11 default
 
       - uses: ./.github/actions/build-all-samples
 
