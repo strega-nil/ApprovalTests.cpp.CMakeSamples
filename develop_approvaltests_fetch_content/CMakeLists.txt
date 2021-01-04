@@ -23,30 +23,30 @@ include(FetchContent)
 set(BoostVersion
         "1.74.0")
 
-# Tested with versions in range: v2.3.0 ... v2.13.3
-# Does not work with devel, and v3 releases
-set(Catch2Version
-        "v2.13.3")
-
-# Tested with versions in range: v4.0
-set(CppUTestVersion
-        "v4.0")
-
-# Tested with versions in range: 2.3.4 ... 2.4.1
-set(DocTestVersion
-        "2.4.1")
-
-# Tested with versions in range: 6.0.0 ... 7.1.2
-set(FmtVersion
-        "7.1.2")
-
-# Tested with versions in range: release-1.8.0 ... release-1.10.0
-set(GoogleTestVersion
-        "release-1.10.0")
-
-# Tested with versions in range: 1.1.7 ... 1.1.8
-set(UtVersion
-        "v1.1.8")
+## Tested with versions in range: v2.3.0 ... v2.13.3
+## Does not work with devel, and v3 releases
+#set(Catch2Version
+#        "v2.13.3")
+#
+## Tested with versions in range: v4.0
+#set(CppUTestVersion
+#        "v4.0")
+#
+## Tested with versions in range: 2.3.4 ... 2.4.1
+#set(DocTestVersion
+#        "2.4.1")
+#
+## Tested with versions in range: 6.0.0 ... 7.1.2
+#set(FmtVersion
+#        "7.1.2")
+#
+## Tested with versions in range: release-1.8.0 ... release-1.10.0
+#set(GoogleTestVersion
+#        "release-1.10.0")
+#
+## Tested with versions in range: 1.1.7 ... 1.1.8
+#set(UtVersion
+#        "v1.1.8")
 
 # -------------------------------------------------------------------
 # boost
@@ -63,39 +63,39 @@ set(BOOST_ROOT ${boost_SOURCE_DIR})
 
 # -------------------------------------------------------------------
 # Catch2
-message(NOTICE "Fetching Catch2...")
-set(CATCH_BUILD_TESTING OFF CACHE BOOL "")
-FetchContent_Declare(Catch2
-        GIT_REPOSITORY https://github.com/catchorg/Catch2.git
-        GIT_TAG ${Catch2Version})
-FetchContent_MakeAvailable(Catch2)
+#message(NOTICE "Fetching Catch2...")
+#set(CATCH_BUILD_TESTING OFF CACHE BOOL "")
+#FetchContent_Declare(Catch2
+#        GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+#        GIT_TAG ${Catch2Version})
+#FetchContent_MakeAvailable(Catch2)
 
 # -------------------------------------------------------------------
 # CppUTest
-message(NOTICE "Fetching cpputest...")
-
-# Prevent CppUTest's own tests from being built
-set(TESTS OFF CACHE BOOL "")
-
-# Prevent build of CppUTest from generating thousands of lines of
-# -Wc++98-compat and -Wc++98-compat-pedantic warnings:
-set(C++11 ON CACHE BOOL "Compile with C++11 support")
-
-FetchContent_Declare(cpputest
-        GIT_REPOSITORY https://github.com/cpputest/cpputest.git
-        GIT_TAG ${CppUTestVersion})
-FetchContent_MakeAvailable(cpputest)
+#message(NOTICE "Fetching cpputest...")
+#
+## Prevent CppUTest's own tests from being built
+#set(TESTS OFF CACHE BOOL "")
+#
+## Prevent build of CppUTest from generating thousands of lines of
+## -Wc++98-compat and -Wc++98-compat-pedantic warnings:
+#set(C++11 ON CACHE BOOL "Compile with C++11 support")
+#
+#FetchContent_Declare(cpputest
+#        GIT_REPOSITORY https://github.com/cpputest/cpputest.git
+#        GIT_TAG ${CppUTestVersion})
+#FetchContent_MakeAvailable(cpputest)
 
 # -------------------------------------------------------------------
 # doctest
-message(NOTICE "Fetching doctest...")
-FetchContent_Declare(
-        doctest
-        GIT_REPOSITORY  https://github.com/onqtam/doctest.git
-        GIT_TAG         ${DocTestVersion}
-)
-FetchContent_MakeAvailable(doctest)
-set_target_properties(doctest_with_main PROPERTIES FOLDER "external")
+#message(NOTICE "Fetching doctest...")
+#FetchContent_Declare(
+#        doctest
+#        GIT_REPOSITORY  https://github.com/onqtam/doctest.git
+#        GIT_TAG         ${DocTestVersion}
+#)
+#FetchContent_MakeAvailable(doctest)
+#set_target_properties(doctest_with_main PROPERTIES FOLDER "external")
 
 # -------------------------------------------------------------------
 # fmt
@@ -107,42 +107,52 @@ FetchContent_Declare(fmt
 FetchContent_MakeAvailable(fmt)
 
 # -------------------------------------------------------------------
-message(NOTICE "Fetching googletest...")
-# GoogleTest
-# Prevent GoogleTest from overriding our compiler/linker options
-# when building with Visual Studio
-set(gtest_force_shared_crt ON CACHE BOOL "" )
-FetchContent_Declare(googletest
-        GIT_REPOSITORY https://github.com/abseil/googletest.git
-        GIT_TAG ${GoogleTestVersion})
-FetchContent_MakeAvailable(googletest)
+#message(NOTICE "Fetching googletest...")
+## GoogleTest
+## Prevent GoogleTest from overriding our compiler/linker options
+## when building with Visual Studio
+#set(gtest_force_shared_crt ON CACHE BOOL "" )
+#FetchContent_Declare(googletest
+#        GIT_REPOSITORY https://github.com/abseil/googletest.git
+#        GIT_TAG ${GoogleTestVersion})
+#FetchContent_MakeAvailable(googletest)
 
 # -------------------------------------------------------------------
 # Boost.ut
-message(NOTICE "Fetching boost.ut...")
-set(BUILD_BENCHMARKS OFF CACHE BOOL "")
-set(BUILD_EXAMPLES OFF CACHE BOOL "")
-set(BUILD_TESTS OFF CACHE BOOL "")
-FetchContent_Declare(boost.ut
-        GIT_REPOSITORY https://github.com/boost-ext/ut.git
-        GIT_TAG ${UtVersion})
-FetchContent_MakeAvailable(boost.ut)
-
-if ("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
-    # Turn off some checks off for boost.ut
-    target_compile_options(boost.ut INTERFACE
-            -Wno-c99-extensions # Needed for Boost.ut, at least in v1.1.6
-            -Wno-documentation-unknown-command # unknown command tag name \userguide
-            -Wno-weak-vtables
-            -Wno-comma # See https://github.com/boost-ext/ut/issues/398
-            )
-endif()
+#message(NOTICE "Fetching boost.ut...")
+#set(BUILD_BENCHMARKS OFF CACHE BOOL "")
+#set(BUILD_EXAMPLES OFF CACHE BOOL "")
+#set(BUILD_TESTS OFF CACHE BOOL "")
+#FetchContent_Declare(boost.ut
+#        GIT_REPOSITORY https://github.com/boost-ext/ut.git
+#        GIT_TAG ${UtVersion})
+#FetchContent_MakeAvailable(boost.ut)
+#
+#if ("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
+#    # Turn off some checks off for boost.ut
+#    target_compile_options(boost.ut INTERFACE
+#            -Wno-c99-extensions # Needed for Boost.ut, at least in v1.1.6
+#            -Wno-documentation-unknown-command # unknown command tag name \userguide
+#            -Wno-weak-vtables
+#            -Wno-comma # See https://github.com/boost-ext/ut/issues/398
+#            )
+#endif()
 
 # -------------------------------------------------------------------
 # ApprovalTests.cpp
 
 set(APPROVAL_TESTS_BUILD_TESTING ON CACHE BOOL "")
-set(APPROVAL_TESTS_BUILD_EXAMPLES ON CACHE BOOL "")
+#set(APPROVAL_TESTS_BUILD_EXAMPLES ON CACHE BOOL "")
+
+# Turn off building examples, for fast feedback on issue #1
+set(APPROVAL_TESTS_BUILD_EXAMPLES OFF CACHE BOOL "")
+
+# Turn off all but Boost Test integration, for fast feedback on issue #1
+set(APPROVAL_TESTS_ENABLE_CATCH2_INTEGRATION OFF CACHE BOOL "")
+set(APPROVAL_TESTS_ENABLE_CPPUTEST_INTEGRATION OFF CACHE BOOL "")
+set(APPROVAL_TESTS_ENABLE_DOCTEST_INTEGRATION OFF CACHE BOOL "")
+set(APPROVAL_TESTS_ENABLE_GOOGLETEST_INTEGRATION OFF CACHE BOOL "")
+set(APPROVAL_TESTS_ENABLE_UT_INTEGRATION OFF CACHE BOOL "")
 
 add_subdirectory(
         ../ApprovalTests.cpp
