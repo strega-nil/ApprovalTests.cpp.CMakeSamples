@@ -7,31 +7,6 @@ runs:
     - name: building sub-directories
       run: |
         echo '--------------------------------------------------------------------------'
-        pushd cmake_invoking_conan
-        ./build.sh
-        popd
-
-        echo '--------------------------------------------------------------------------'
-        pushd conan_cmake
-        ./build.sh
-        popd
-
-        echo '--------------------------------------------------------------------------'
-        pushd conan_cmake_find_package
-        ./build.sh
-        popd
-
-        echo '--------------------------------------------------------------------------'
-        pushd fetch_content_approvaltests_catch2
-        ./build.sh
-        popd
-
-        echo '--------------------------------------------------------------------------'
-        pushd fetch_content_approvaltests_catch2
-        ./build.sh
-        popd
-
-        echo '--------------------------------------------------------------------------'
         git clone https://github.com/approvals/ApprovalTests.cpp.git
         pushd develop_approvaltests_fetch_content
         ./build.sh
