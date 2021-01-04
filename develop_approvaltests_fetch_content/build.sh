@@ -8,4 +8,4 @@ mkdir -p build
 cd       build
 cmake -DCMAKE_BUILD_TYPE=Debug ..
 cmake --build .
-ctest --output-on-failure --extra-verbose . -C Debug
+ctest --output-on-failure . -C Debug
