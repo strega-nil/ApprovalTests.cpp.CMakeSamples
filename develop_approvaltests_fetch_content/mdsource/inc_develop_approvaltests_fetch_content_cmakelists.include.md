@@ -23,8 +23,12 @@ include(FetchContent)
 
 # Oldest Boost in dl.bintray.com is 1.63.0
 # Tested with versions in range: 1.63.0 ... 1.74.0
+# NOTE: With gcc, and Boost 1.73.0, 1.74.0 and 1.75.0, tests in the following directory
+#       exit with error code 200:
+#           ApprovalTests.cpp.CMakeSamples/ApprovalTests.cpp/tests/Boost_Tests/
+#       See https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/issues/1
 set(BoostVersion
-        "1.74.0")
+        "1.72.0")
 
 # Tested with versions in range: v2.3.0 ... v2.13.3
 # Does not work with devel, and v3 releases
@@ -76,6 +80,14 @@ FetchContent_MakeAvailable(Catch2)
 # -------------------------------------------------------------------
 # CppUTest
 message(NOTICE "Fetching cpputest...")
+
+# Prevent CppUTest's own tests from being built
+set(TESTS OFF CACHE BOOL "")
+
+# Prevent build of CppUTest from generating thousands of lines of
+# -Wc++98-compat and -Wc++98-compat-pedantic warnings:
+set(C++11 ON CACHE BOOL "Compile with C++11 support")
+
 FetchContent_Declare(cpputest
         GIT_REPOSITORY https://github.com/cpputest/cpputest.git
         GIT_TAG ${CppUTestVersion})
