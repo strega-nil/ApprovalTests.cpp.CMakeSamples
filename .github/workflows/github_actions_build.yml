@@ -250,32 +250,32 @@ jobs:
       - name: Build cmake_invoking_conan
         run: |
           cd cmake_invoking_conan
-          powershell -File build.ps1
+          pwsh -command "$ErrorActionPreference = 'Stop'; & build.ps1"
 
       - name: Build conan_cmake
         run: |
           cd conan_cmake
-          powershell -File build.ps1
+          pwsh -command "$ErrorActionPreference = 'Stop'; & build.ps1
 
       - name: Build conan_cmake_find_package
         run: |
           cd conan_cmake_find_package
-          powershell -File build.ps1
+          pwsh -command "$ErrorActionPreference = 'Stop'; & build.ps1
 
       - name: Build fetch_content_approvaltests_catch2
         run: |
           cd fetch_content_approvaltests_catch2
-          powershell -File build.ps1
+          pwsh -command "$ErrorActionPreference = 'Stop'; & build.ps1
 
       - name: Build fetch_content_approvaltests_catch2
         run: |
           cd fetch_content_approvaltests_catch2
-          powershell -File build.ps1
+          pwsh -command "$ErrorActionPreference = 'Stop'; & build.ps1
 
       - name: Build develop_approvaltests_fetch_content
         run: |
           git clone https://github.com/approvals/ApprovalTests.cpp.git
           cd develop_approvaltests_fetch_content
-          powershell -File build.ps1
+          pwsh -command "$ErrorActionPreference = 'Stop'; & build.ps1
 
 
