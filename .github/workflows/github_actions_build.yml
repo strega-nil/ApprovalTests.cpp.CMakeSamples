@@ -110,27 +110,27 @@ jobs:
         if: contains(matrix.job-name, 'gcc')
         run: conan profile update settings.compiler.libcxx=libstdc++11 default
 
-      -run: |
+      - run: |
         cd cmake_invoking_conan
         ./build.sh
 
-      -run: |
+      - run: |
         cd conan_cmake
         ./build.sh
 
-      -run: |
+      - run: |
         cd conan_cmake_find_package
         ./build.sh
 
-      -run: |
+      - run: |
         cd fetch_content_approvaltests_catch2
         ./build.sh
 
-      -run: |
+      - run: |
         cd fetch_content_approvaltests_catch2
         ./build.sh
 
-      -run: |
+      - run: |
         git clone https://github.com/approvals/ApprovalTests.cpp.git
         cd develop_approvaltests_fetch_content
         ./build.sh
@@ -181,27 +181,27 @@ jobs:
           python-version: '3.x'
       - uses: ./.github/actions/setup-conan
 
-      -run: |
+      - run: |
         cd cmake_invoking_conan
         ./build.sh
 
-      -run: |
+      - run: |
         cd conan_cmake
         ./build.sh
 
-      -run: |
+      - run: |
         cd conan_cmake_find_package
         ./build.sh
 
-      -run: |
+      - run: |
         cd fetch_content_approvaltests_catch2
         ./build.sh
 
-      -run: |
+      - run: |
         cd fetch_content_approvaltests_catch2
         ./build.sh
 
-      -run: |
+      - run: |
         git clone https://github.com/approvals/ApprovalTests.cpp.git
         cd develop_approvaltests_fetch_content
         ./build.sh
