@@ -219,7 +219,7 @@ jobs:
           ./build.sh
 
   Windows:
-    if: false # Disable windows builds, due to path length errors
+    # if: false # Disable windows builds, due to path length errors
     runs-on: windows-${{ matrix.os-version }}
     strategy:
       fail-fast: false
@@ -247,5 +247,35 @@ jobs:
           python-version: '3.x'
       - uses: ./.github/actions/setup-conan
 
-      - uses: ./.github/actions/build-all-samples
+      - name: Build cmake_invoking_conan
+        run: |
+          cd cmake_invoking_conan
+          ./build.sh
+
+      - name: Build conan_cmake
+        run: |
+          cd conan_cmake
+          ./build.sh
+
+      - name: Build conan_cmake_find_package
+        run: |
+          cd conan_cmake_find_package
+          ./build.sh
+
+      - name: Build fetch_content_approvaltests_catch2
+        run: |
+          cd fetch_content_approvaltests_catch2
+          ./build.sh
+
+      - name: Build fetch_content_approvaltests_catch2
+        run: |
+          cd fetch_content_approvaltests_catch2
+          ./build.sh
+
+      - name: Build develop_approvaltests_fetch_content
+        run: |
+          git clone https://github.com/approvals/ApprovalTests.cpp.git
+          cd develop_approvaltests_fetch_content
+          ./build.sh
+
 
