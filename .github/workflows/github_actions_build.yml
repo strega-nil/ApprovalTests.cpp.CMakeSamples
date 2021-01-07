@@ -112,34 +112,34 @@ jobs:
 
       - name: cmake_invoking_conan
         run: |
-        cd cmake_invoking_conan
-        ./build.sh
+          cd cmake_invoking_conan
+          ./build.sh
 
       - name: conan_cmake
         run: |
-        cd conan_cmake
-        ./build.sh
+          cd conan_cmake
+          ./build.sh
 
       - name: conan_cmake_find_package
         run: |
-        cd conan_cmake_find_package
-        ./build.sh
+          cd conan_cmake_find_package
+          ./build.sh
 
       - name: fetch_content_approvaltests_catch2
         run: |
-        cd fetch_content_approvaltests_catch2
-        ./build.sh
+          cd fetch_content_approvaltests_catch2
+          ./build.sh
 
       - name: fetch_content_approvaltests_catch2
         run: |
-        cd fetch_content_approvaltests_catch2
-        ./build.sh
+          cd fetch_content_approvaltests_catch2
+          ./build.sh
 
       - name: develop_approvaltests_fetch_content
         run: |
-        git clone https://github.com/approvals/ApprovalTests.cpp.git
-        cd develop_approvaltests_fetch_content
-        ./build.sh
+          git clone https://github.com/approvals/ApprovalTests.cpp.git
+          cd develop_approvaltests_fetch_content
+          ./build.sh
 
   macOS:
     # if: false # Disable this platform temporarily
@@ -189,34 +189,34 @@ jobs:
 
       - name: cmake_invoking_conan
         run: |
-        cd cmake_invoking_conan
-        ./build.sh
+          cd cmake_invoking_conan
+          ./build.sh
 
       - name: conan_cmake
         run: |
-        cd conan_cmake
-        ./build.sh
+          cd conan_cmake
+          ./build.sh
 
       - name: conan_cmake_find_package
         run: |
-        cd conan_cmake_find_package
-        ./build.sh
+          cd conan_cmake_find_package
+          ./build.sh
 
       - name: fetch_content_approvaltests_catch2
         run: |
-        cd fetch_content_approvaltests_catch2
-        ./build.sh
+          cd fetch_content_approvaltests_catch2
+          ./build.sh
 
       - name: fetch_content_approvaltests_catch2
         run: |
-        cd fetch_content_approvaltests_catch2
-        ./build.sh
+          cd fetch_content_approvaltests_catch2
+          ./build.sh
 
       - name: develop_approvaltests_fetch_content
         run: |
-        git clone https://github.com/approvals/ApprovalTests.cpp.git
-        cd develop_approvaltests_fetch_content
-        ./build.sh
+          git clone https://github.com/approvals/ApprovalTests.cpp.git
+          cd develop_approvaltests_fetch_content
+          ./build.sh
 
   Windows:
     if: false # Disable windows builds, due to path length errors
