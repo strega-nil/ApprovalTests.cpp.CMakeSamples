@@ -110,32 +110,32 @@ jobs:
         if: contains(matrix.job-name, 'gcc')
         run: conan profile update settings.compiler.libcxx=libstdc++11 default
 
-      - name: cmake_invoking_conan
+      - name: Build cmake_invoking_conan
         run: |
           cd cmake_invoking_conan
           ./build.sh
 
-      - name: conan_cmake
+      - name: Build conan_cmake
         run: |
           cd conan_cmake
           ./build.sh
 
-      - name: conan_cmake_find_package
+      - name: Build conan_cmake_find_package
         run: |
           cd conan_cmake_find_package
           ./build.sh
 
-      - name: fetch_content_approvaltests_catch2
+      - name: Build fetch_content_approvaltests_catch2
         run: |
           cd fetch_content_approvaltests_catch2
           ./build.sh
 
-      - name: fetch_content_approvaltests_catch2
+      - name: Build fetch_content_approvaltests_catch2
         run: |
           cd fetch_content_approvaltests_catch2
           ./build.sh
 
-      - name: develop_approvaltests_fetch_content
+      - name: Build develop_approvaltests_fetch_content
         run: |
           git clone https://github.com/approvals/ApprovalTests.cpp.git
           cd develop_approvaltests_fetch_content
@@ -187,32 +187,32 @@ jobs:
           python-version: '3.x'
       - uses: ./.github/actions/setup-conan
 
-      - name: cmake_invoking_conan
+      - name: Build cmake_invoking_conan
         run: |
           cd cmake_invoking_conan
           ./build.sh
 
-      - name: conan_cmake
+      - name: Build conan_cmake
         run: |
           cd conan_cmake
           ./build.sh
 
-      - name: conan_cmake_find_package
+      - name: Build conan_cmake_find_package
         run: |
           cd conan_cmake_find_package
           ./build.sh
 
-      - name: fetch_content_approvaltests_catch2
+      - name: Build fetch_content_approvaltests_catch2
         run: |
           cd fetch_content_approvaltests_catch2
           ./build.sh
 
-      - name: fetch_content_approvaltests_catch2
+      - name: Build fetch_content_approvaltests_catch2
         run: |
           cd fetch_content_approvaltests_catch2
           ./build.sh
 
-      - name: develop_approvaltests_fetch_content
+      - name: Build develop_approvaltests_fetch_content
         run: |
           git clone https://github.com/approvals/ApprovalTests.cpp.git
           cd develop_approvaltests_fetch_content
