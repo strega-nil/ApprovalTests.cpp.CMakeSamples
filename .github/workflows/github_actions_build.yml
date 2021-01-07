@@ -250,7 +250,7 @@ jobs:
       - name: Build cmake_invoking_conan
         run: |
           cd cmake_invoking_conan
-          ./build.sh
+          powershell -File build.ps1
 
       - name: Build conan_cmake
         run: |
