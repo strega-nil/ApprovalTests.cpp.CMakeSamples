@@ -1,3 +1,5 @@
+$ErrorActionPreference = 'Stop'
+
 mkdir  -force build
 Push-Location build
 
