@@ -248,34 +248,46 @@ jobs:
       - uses: ./.github/actions/setup-conan
 
       - name: Build cmake_invoking_conan
+        shell: pwsh
         run: |
+          $ErrorActionPreference = 'Stop'
           cd cmake_invoking_conan
-          pwsh -command "$ErrorActionPreference = 'Stop'; & build.ps1"
+          ./build.ps1
 
       - name: Build conan_cmake
+        shell: pwsh
         run: |
+          $ErrorActionPreference = 'Stop'
           cd conan_cmake
-          pwsh -command "$ErrorActionPreference = 'Stop'; & build.ps1
+          ./build.ps1
 
       - name: Build conan_cmake_find_package
+        shell: pwsh
         run: |
+          $ErrorActionPreference = 'Stop'
           cd conan_cmake_find_package
-          pwsh -command "$ErrorActionPreference = 'Stop'; & build.ps1
+          ./build.ps1
 
       - name: Build fetch_content_approvaltests_catch2
+        shell: pwsh
         run: |
+          $ErrorActionPreference = 'Stop'
           cd fetch_content_approvaltests_catch2
-          pwsh -command "$ErrorActionPreference = 'Stop'; & build.ps1
+          ./build.ps1
 
       - name: Build fetch_content_approvaltests_catch2
+        shell: pwsh
         run: |
+          $ErrorActionPreference = 'Stop'
           cd fetch_content_approvaltests_catch2
-          pwsh -command "$ErrorActionPreference = 'Stop'; & build.ps1
+          ./build.ps1
 
       - name: Build develop_approvaltests_fetch_content
+        shell: pwsh
         run: |
+          $ErrorActionPreference = 'Stop'
           git clone https://github.com/approvals/ApprovalTests.cpp.git
           cd develop_approvaltests_fetch_content
-          pwsh -command "$ErrorActionPreference = 'Stop'; & build.ps1
+          ./build.ps1
 
 
