@@ -255,27 +255,27 @@ jobs:
       - name: Build conan_cmake
         run: |
           cd conan_cmake
-          ./build.sh
+          powershell -File build.ps1
 
       - name: Build conan_cmake_find_package
         run: |
           cd conan_cmake_find_package
-          ./build.sh
+          powershell -File build.ps1
 
       - name: Build fetch_content_approvaltests_catch2
         run: |
           cd fetch_content_approvaltests_catch2
-          ./build.sh
+          powershell -File build.ps1
 
       - name: Build fetch_content_approvaltests_catch2
         run: |
           cd fetch_content_approvaltests_catch2
-          ./build.sh
+          powershell -File build.ps1
 
       - name: Build develop_approvaltests_fetch_content
         run: |
           git clone https://github.com/approvals/ApprovalTests.cpp.git
           cd develop_approvaltests_fetch_content
-          ./build.sh
+          powershell -File build.ps1
 
 
