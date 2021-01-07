@@ -5,6 +5,6 @@ Push-Location build
 # However, we do need to say what build configuration we want.
 cmake -DCMAKE_BUILD_TYPE=Debug ..
 cmake --build .
-ctest --output-on-failure .
+ctest --output-on-failure . -C Debug
 
 Pop-Location
