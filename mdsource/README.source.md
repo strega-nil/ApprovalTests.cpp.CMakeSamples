@@ -36,7 +36,7 @@ include: cmake_invoking_conan
 
 ## Developing ApprovalTests.cpp with CMake
 
-### develop_approvaltests
+### dev_approvals
 
-include: develop_approvaltests
+include: dev_approvals
 

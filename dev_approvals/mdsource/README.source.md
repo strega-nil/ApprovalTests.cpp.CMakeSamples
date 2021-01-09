@@ -1,11 +1,11 @@
-# develop_approvaltests
+# dev_approvals
 
-include: develop_approvaltests
+include: dev_approvals
 
 The top-level CMakeLists.txt file is:
 
-include: inc_develop_approvaltests_cmakelists
+include: inc_dev_approvals_cmakelists
 
 The build script is:
 
-include: inc_develop_approvaltests_build
+include: inc_dev_approvals_build
