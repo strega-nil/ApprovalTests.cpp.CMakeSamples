@@ -238,8 +238,11 @@ jobs:
             generator: '"Visual Studio 16 2019" -T "clangcl"'
 
     name: Windows ${{ matrix.job-name }}
+    # Need to check out in to shorter directory, to avoid 260-char path-length limit
     steps:
       - uses: actions/checkout@master
+        with:
+          path: ATs.CMS
 
       - name: set up python
         uses: actions/setup-python@v1
