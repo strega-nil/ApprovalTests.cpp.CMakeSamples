@@ -242,7 +242,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
         with:
-          path: ATs.CMS
+          path: ../ATs.CMS
 
       - name: check location
         shell: bash
