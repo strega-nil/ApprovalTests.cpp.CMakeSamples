@@ -240,6 +240,13 @@ jobs:
     name: Windows ${{ matrix.job-name }}
     # Need to check out in to shorter directory, to avoid 260-char path-length limit
     steps:
+      - name: check location
+        shell: bash
+        run: |
+          pwd
+          ls -ls
+          ls -ls ..
+
       - uses: actions/checkout@master
         with:
           path: ATs.CMS
