@@ -269,11 +269,10 @@ jobs:
           ./build.ps1
 
       - name: Build fetch_content_approvaltests
-        shell: pwsh
+        shell: bash
         run: |
-          $ErrorActionPreference = 'Stop'
           cd fetch_content_approvaltests
-          ./build.ps1
+          ./build.sh
 
       - name: Build fetch_content_approvaltests_catch2
         shell: pwsh
