@@ -242,13 +242,6 @@ jobs:
     steps:
       - uses: actions/checkout@master
 
-      - name: check location
-        shell: bash
-        run: |
-          pwd
-          ls -ls
-          ls -ls ..
-
       - name: set up python
         uses: actions/setup-python@v1
         with:
