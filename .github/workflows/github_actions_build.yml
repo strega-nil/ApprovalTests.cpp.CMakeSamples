@@ -135,10 +135,10 @@ jobs:
           cd fetch_content_approvaltests_catch2
           ./build.sh
 
-      - name: Build develop_approvaltests_fetch_content
+      - name: Build dev_approvals_fetch_content
         run: |
           git clone https://github.com/approvals/ApprovalTests.cpp.git
-          cd develop_approvaltests_fetch_content
+          cd dev_approvals_fetch_content
           ./build.sh
 
   macOS:
@@ -212,10 +212,10 @@ jobs:
           cd fetch_content_approvaltests_catch2
           ./build.sh
 
-      - name: Build develop_approvaltests_fetch_content
+      - name: Build dev_approvals_fetch_content
         run: |
           git clone https://github.com/approvals/ApprovalTests.cpp.git
-          cd develop_approvaltests_fetch_content
+          cd dev_approvals_fetch_content
           ./build.sh
 
   Windows:
@@ -285,11 +285,11 @@ jobs:
           cd fetch_content_approvaltests_catch2
           ./build.sh
 
-      - name: Build develop_approvaltests_fetch_content
+      - name: Build dev_approvals_fetch_content
         shell: bash
         run: |
           git clone https://github.com/approvals/ApprovalTests.cpp.git
-          cd develop_approvaltests_fetch_content
+          cd dev_approvals_fetch_content
           ./build.sh
 
 
