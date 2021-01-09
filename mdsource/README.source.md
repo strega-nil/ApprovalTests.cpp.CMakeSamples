@@ -40,3 +40,7 @@ include: cmake_invoking_conan
 
 include: dev_approvals
 
+### dev_approvals_fetch_content
+
+include: dev_approvals_fetch_content
+
