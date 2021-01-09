@@ -19,7 +19,7 @@ To change this file edit the source file and then execute ./run_markdown_templat
     * [conan_cmake](#conan_cmake)
     * [cmake_invoking_conan](#cmake_invoking_conan)
   * [Developing ApprovalTests.cpp with CMake](#developing-approvaltestscpp-with-cmake)
-    * [develop_approvaltests](#develop_approvaltests)<!-- endToc -->
+    * [dev_approvals](#dev_approvals)<!-- endToc -->
 
 [![Build Status](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/workflows/build/badge.svg?branch=main)](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/actions?query=branch%3Amain+workflow%3Abuild)
 
@@ -103,12 +103,12 @@ CMake code for various scenarios, for including in the ApprovalTests.cpp cmake d
 
 ## Developing ApprovalTests.cpp with CMake
 
-### develop_approvaltests
+### dev_approvals
 
- <!-- include: develop_approvaltests. path: /develop_approvaltests/mdsource/develop_approvaltests.include.md -->
+ <!-- include: dev_approvals. path: /dev_approvals/mdsource/dev_approvals.include.md -->
 | Topic        | Detail                                                       |
 | ------------ | ------------------------------------------------------------ |
-| Directory    | [develop_approvaltests](/develop_approvaltests/)                        |
+| Directory    | [dev_approvals](/dev_approvals/)                        |
 | Purpose      | Demo how to build the ApprovalTests.cpp project against your clones or forks of all its dependencies.<br />Those source code of those dependencies will be included in your IDE, alongside your own source code.<br />This allows you to make edits to the dependent projects. |
 | Dependencies | ApprovalTests.cpp - cloned on your machine<br />All its dependencies also cloned on your machine |
 | Mechanism    | Uses CMake's [`find_package()`](https://cmake.org/cmake/help/latest/command/find_package.html) for finding boost, and [`add_subdirectory()`](https://cmake.org/cmake/help/latest/command/add_subdirectory.html) for everything else. |

@@ -39,7 +39,11 @@ set_property(GLOBAL PROPERTY CTEST_TARGETS_ADDED 1) # hack to prevent CTest adde
 # -------------------------------------------------------------------
 # boost
 # This will be used by find_package() in ApprovalTests.cpp/tests/Boost_Tests
-set(BOOST_ROOT ${CMAKE_CURRENT_SOURCE_DIR}/../boost)
+# If there is a local boost directory, use tat.
+# Otherwise, require the user to have installed boost (as is done in CI builds)
+if (EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/../boost)
+    set(BOOST_ROOT ${CMAKE_CURRENT_SOURCE_DIR}/../boost)
+endif()
 
 # -------------------------------------------------------------------
 # Catch2
@@ -51,6 +55,14 @@ add_subdirectory(
 
 # -------------------------------------------------------------------
 # CppUTest
+
+# Prevent CppUTest's own tests from being built
+set(TESTS OFF CACHE BOOL "")
+
+# Prevent build of CppUTest from generating thousands of lines of
+# -Wc++98-compat and -Wc++98-compat-pedantic warnings:
+set(C++11 ON CACHE BOOL "Compile with C++11 support")
+
 add_subdirectory(
         ../cpputest
         ${CMAKE_CURRENT_BINARY_DIR}/cpputest_build
@@ -121,13 +133,17 @@ The build script is:
  <!-- include: inc_dev_approvals_build. path: /dev_approvals/mdsource/inc_dev_approvals_build.include.md -->
 
 ```bash
-#!/bin/sh
+#!/bin/bash
+
+# Force execution to halt if there are any errors in this script:
+set -e
+set -o pipefail
 
 mkdir -p build
 cd       build
 cmake -DCMAKE_BUILD_TYPE=Debug ..
 cmake --build .
-ctest ctest --output-on-failure . -C Debug
+ctest --output-on-failure . -C Debug
 ```
 <sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./dev_approvals/build.sh' title='File snippet was copied from'>snippet source</a></sup>
  <!-- endInclude -->
