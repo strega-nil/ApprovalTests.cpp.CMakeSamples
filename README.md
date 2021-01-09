@@ -125,6 +125,6 @@ CMake code for various scenarios, for including in the ApprovalTests.cpp cmake d
 | Purpose      | Demo how to build the ApprovalTests.cpp project using CMake's `FetchContent_Declare` and `FetchContent_MakeAvailable` to clone its dependencies.<br />The source code of the dependencies will be cloned inside your CMake build space, and will not be shown inside your IDE.<br />This requires at least CMake 3.14. |
 | Dependencies | ApprovalTests.cpp - cloned on your machine<br />All its dependencies also cloned on your machine, inside each build space |
 | Mechanism    | Uses CMake's [`FetchContent`](https://cmake.org/cmake/help/latest/module/FetchContent.html) module. |
-| More Detail  | See [Developing ApprovalTests.cpp with test framework sources](https://github.com/approvals/ApprovalTests.cpp/blob/master/doc/CMakeIntegration.md#developing-approvaltestscpp-with-test-framework-sources) |
+| More Detail  |  |
  <!-- endInclude -->
 
