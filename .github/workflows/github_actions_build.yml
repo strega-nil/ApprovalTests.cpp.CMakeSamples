@@ -268,11 +268,11 @@ jobs:
           cd conan_cmake_find_package
           ./build.ps1
 
-      - name: Build fetch_content_approvaltests_catch2
+      - name: Build fetch_content_approvaltests
         shell: pwsh
         run: |
           $ErrorActionPreference = 'Stop'
-          cd fetch_content_approvaltests_catch2
+          cd fetch_content_approvaltests
           ./build.ps1
 
       - name: Build fetch_content_approvaltests_catch2
