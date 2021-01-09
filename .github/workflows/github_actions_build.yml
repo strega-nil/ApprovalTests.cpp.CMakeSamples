@@ -248,25 +248,22 @@ jobs:
       - uses: ./.github/actions/setup-conan
 
       - name: Build cmake_invoking_conan
-        shell: pwsh
+        shell: bash
         run: |
-          $ErrorActionPreference = 'Stop'
           cd cmake_invoking_conan
-          ./build.ps1
+          ./build.sh
 
       - name: Build conan_cmake
-        shell: pwsh
+        shell: bash
         run: |
-          $ErrorActionPreference = 'Stop'
           cd conan_cmake
-          ./build.ps1
+          ./build.sh
 
       - name: Build conan_cmake_find_package
-        shell: pwsh
+        shell: bash
         run: |
-          $ErrorActionPreference = 'Stop'
           cd conan_cmake_find_package
-          ./build.ps1
+          ./build.sh
 
       - name: Build fetch_content_approvaltests
         shell: bash
@@ -275,18 +272,16 @@ jobs:
           ./build.sh
 
       - name: Build fetch_content_approvaltests_catch2
-        shell: pwsh
+        shell: bash
         run: |
-          $ErrorActionPreference = 'Stop'
           cd fetch_content_approvaltests_catch2
-          ./build.ps1
+          ./build.sh
 
       - name: Build develop_approvaltests_fetch_content
-        shell: pwsh
+        shell: bash
         run: |
-          $ErrorActionPreference = 'Stop'
           git clone https://github.com/approvals/ApprovalTests.cpp.git
           cd develop_approvaltests_fetch_content
-          ./build.ps1
+          ./build.sh
 
 
