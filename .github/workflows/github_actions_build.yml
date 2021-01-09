@@ -148,7 +148,6 @@ jobs:
 
       - name: Build dev_approvals
         run: |
-          ls -ls
           ./ApprovalTests.cpp/scripts/clone_dependencies.sh
           cd dev_approvals
           ./build.sh
@@ -236,7 +235,6 @@ jobs:
 
       - name: Build dev_approvals
         run: |
-          ls -ls
           ./ApprovalTests.cpp/scripts/clone_dependencies.sh
           cd dev_approvals
           ./build.sh
@@ -318,7 +316,6 @@ jobs:
       - name: Build dev_approvals
         shell: bash
         run: |
-          ls -ls
           ./ApprovalTests.cpp/scripts/clone_dependencies.sh
           cd dev_approvals
           ./build.sh
