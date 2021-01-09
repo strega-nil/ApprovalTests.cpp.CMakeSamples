@@ -230,6 +230,17 @@ jobs:
           cd dev_approvals_fetch_content
           ./build.sh
 
+      - name: install boost
+        run: |
+          brew install boost
+
+      - name: Build dev_approvals
+        run: |
+          ls -ls
+          ./ApprovalTests.cpp/scripts/clone_dependencies.sh
+          cd dev_approvals
+          ./build.sh
+
   Windows:
     # if: false # Disable windows builds, due to path length errors
     runs-on: windows-${{ matrix.os-version }}
@@ -297,4 +308,16 @@ jobs:
           cd dev_approvals_fetch_content
           ./build.sh
 
+      - name: install boost
+        run: |
+          ${boostroot} = "${env:BOOST_ROOT_1_72_0}"
+          echo "BOOST_ROOT=${boostroot}" >> ${env:GITHUB_ENV}
+          echo "BOOST_INCLUDEDIR=${boostroot}\include" >> ${env:GITHUB_ENV}
+          echo "BOOST_LIBRARYDIR=${boostroot}\lib" >> ${env:GITHUB_ENV}
 
+      - name: Build dev_approvals
+        run: |
+          ls -ls
+          ./ApprovalTests.cpp/scripts/clone_dependencies.sh
+          cd dev_approvals
+          ./build.sh
