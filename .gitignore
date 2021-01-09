@@ -7,3 +7,4 @@ fmt
 googletest
 ut
 *.swp
+.idea/
