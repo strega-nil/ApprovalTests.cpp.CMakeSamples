@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
 
-project(develop_approvaltests_fetch_content)
+project(dev_approvals_fetch_content)
 
 enable_testing()
 

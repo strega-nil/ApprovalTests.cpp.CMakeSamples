@@ -135,10 +135,10 @@ jobs:
           cd fetch_content_approvaltests_catch2
           ./build.sh
 
-      - name: Build develop_approvaltests_fetch_content
+      - name: Build dev_approvals_fetch_content
         run: |
           git clone https://github.com/approvals/ApprovalTests.cpp.git
-          cd develop_approvaltests_fetch_content
+          cd dev_approvals_fetch_content
           ./build.sh
 
   macOS:
@@ -212,10 +212,10 @@ jobs:
           cd fetch_content_approvaltests_catch2
           ./build.sh
 
-      - name: Build develop_approvaltests_fetch_content
+      - name: Build dev_approvals_fetch_content
         run: |
           git clone https://github.com/approvals/ApprovalTests.cpp.git
-          cd develop_approvaltests_fetch_content
+          cd dev_approvals_fetch_content
           ./build.sh
 
   Windows:
@@ -238,6 +238,7 @@ jobs:
             generator: '"Visual Studio 16 2019" -T "clangcl"'
 
     name: Windows ${{ matrix.job-name }}
+    # Need to check out in to shorter directory, to avoid 260-char path-length limit
     steps:
       - uses: actions/checkout@master
 
@@ -248,46 +249,40 @@ jobs:
       - uses: ./.github/actions/setup-conan
 
       - name: Build cmake_invoking_conan
-        shell: pwsh
+        shell: bash
         run: |
-          $ErrorActionPreference = 'Stop'
           cd cmake_invoking_conan
-          ./build.ps1
+          ./build.sh
 
       - name: Build conan_cmake
-        shell: pwsh
+        shell: bash
         run: |
-          $ErrorActionPreference = 'Stop'
           cd conan_cmake
-          ./build.ps1
+          ./build.sh
 
       - name: Build conan_cmake_find_package
-        shell: pwsh
+        shell: bash
         run: |
-          $ErrorActionPreference = 'Stop'
           cd conan_cmake_find_package
-          ./build.ps1
+          ./build.sh
 
       - name: Build fetch_content_approvaltests
-        shell: pwsh
+        shell: bash
         run: |
-          $ErrorActionPreference = 'Stop'
           cd fetch_content_approvaltests
-          ./build.ps1
+          ./build.sh
 
       - name: Build fetch_content_approvaltests_catch2
-        shell: pwsh
+        shell: bash
         run: |
-          $ErrorActionPreference = 'Stop'
           cd fetch_content_approvaltests_catch2
-          ./build.ps1
+          ./build.sh
 
-      - name: Build develop_approvaltests_fetch_content
-        shell: pwsh
+      - name: Build dev_approvals_fetch_content
+        shell: bash
         run: |
-          $ErrorActionPreference = 'Stop'
           git clone https://github.com/approvals/ApprovalTests.cpp.git
-          cd develop_approvaltests_fetch_content
-          ./build.ps1
+          cd dev_approvals_fetch_content
+          ./build.sh
 
 
