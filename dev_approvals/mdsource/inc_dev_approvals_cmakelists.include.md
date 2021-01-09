@@ -3,7 +3,7 @@
 ```cmake
 cmake_minimum_required(VERSION 3.8 FATAL_ERROR)
 
-project(develop_approvaltests)
+project(dev_approvals)
 
 enable_testing()
 
@@ -18,7 +18,11 @@ set_property(GLOBAL PROPERTY CTEST_TARGETS_ADDED 1) # hack to prevent CTest adde
 # -------------------------------------------------------------------
 # boost
 # This will be used by find_package() in ApprovalTests.cpp/tests/Boost_Tests
-set(BOOST_ROOT ${CMAKE_CURRENT_SOURCE_DIR}/../boost)
+# If there is a local boost directory, use tat.
+# Otherwise, require the user to have installed boost (as is done in CI builds)
+if (EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/../boost)
+    set(BOOST_ROOT ${CMAKE_CURRENT_SOURCE_DIR}/../boost)
+endif()
 
 # -------------------------------------------------------------------
 # Catch2
@@ -30,6 +34,14 @@ add_subdirectory(
 
 # -------------------------------------------------------------------
 # CppUTest
+
+# Prevent CppUTest's own tests from being built
+set(TESTS OFF CACHE BOOL "")
+
+# Prevent build of CppUTest from generating thousands of lines of
+# -Wc++98-compat and -Wc++98-compat-pedantic warnings:
+set(C++11 ON CACHE BOOL "Compile with C++11 support")
+
 add_subdirectory(
         ../cpputest
         ${CMAKE_CURRENT_BINARY_DIR}/cpputest_build
@@ -92,5 +104,5 @@ add_subdirectory(
         ${CMAKE_CURRENT_BINARY_DIR}/approvaltests.cpp_build
 )
 ```
-<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./develop_approvaltests/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./dev_approvals/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
 

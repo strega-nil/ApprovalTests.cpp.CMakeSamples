@@ -3,7 +3,7 @@
 ```cmake
 cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
 
-project(develop_approvaltests_fetch_content)
+project(dev_approvals_fetch_content)
 
 enable_testing()
 
@@ -33,27 +33,27 @@ set(BoostVersion
 # Tested with versions in range: v2.3.0 ... v2.13.3
 # Does not work with devel, and v3 releases
 set(Catch2Version
-        "v2.13.3")
+        "v2.x")
 
 # Tested with versions in range: v4.0
 set(CppUTestVersion
-        "v4.0")
+        "master")
 
 # Tested with versions in range: 2.3.4 ... 2.4.1
 set(DocTestVersion
-        "2.4.1")
+        "master")
 
 # Tested with versions in range: 6.0.0 ... 7.1.2
 set(FmtVersion
-        "7.1.2")
+        "master")
 
 # Tested with versions in range: release-1.8.0 ... release-1.10.0
 set(GoogleTestVersion
-        "release-1.10.0")
+        "master")
 
 # Tested with versions in range: 1.1.7 ... 1.1.8
 set(UtVersion
-        "v1.1.8")
+        "master")
 
 # -------------------------------------------------------------------
 # boost
@@ -156,5 +156,5 @@ add_subdirectory(
         ${CMAKE_CURRENT_BINARY_DIR}/approvaltests.cpp_build
 )
 ```
-<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./develop_approvaltests_fetch_content/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./dev_approvals_fetch_content/CMakeLists.txt' title='File snippet was copied from'>snippet source</a></sup>
 

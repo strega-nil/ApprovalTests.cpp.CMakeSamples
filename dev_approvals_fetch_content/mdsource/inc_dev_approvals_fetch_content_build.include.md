@@ -13,5 +13,5 @@ cmake -DCMAKE_BUILD_TYPE=Debug ..
 cmake --build .
 ctest --output-on-failure . -C Debug
 ```
-<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./develop_approvaltests/build.sh' title='File snippet was copied from'>snippet source</a></sup>
+<sup><a href='https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/blob/main/./dev_approvals_fetch_content/build.sh' title='File snippet was copied from'>snippet source</a></sup>
 
