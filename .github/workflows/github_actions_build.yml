@@ -309,7 +309,6 @@ jobs:
           ./build.sh
 
       - name: install boost
-        shell: bash
         run: |
           ${boostroot} = "${env:BOOST_ROOT_1_72_0}"
           echo "BOOST_ROOT=${boostroot}" >> ${env:GITHUB_ENV}
