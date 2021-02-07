@@ -2,8 +2,8 @@
 
 ```
 [requires]
-catch2/2.11.0
-approvaltests.cpp/8.8.0
+catch2/2.13.4
+approvaltests.cpp/10.7.0
 
 [generators]
 cmake
