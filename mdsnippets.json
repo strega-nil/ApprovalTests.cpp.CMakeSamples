@@ -1,7 +1,7 @@
 {
   "ReadOnly": true,
   "TocLevel": 5,
-  "Exclude": [
+  "ExcludeDirectories": [
     "cmake-build",
     "build",
     "ApprovalTests.cpp/",
