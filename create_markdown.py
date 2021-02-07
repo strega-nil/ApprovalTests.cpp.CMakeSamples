@@ -50,7 +50,7 @@ def get_syntax_name(file_base_name, file_extension):
 
 def show_for_markdown(root, file):
     top_level = os.path.split(root)[0]
-    if top_level == '.':
+    if top_level == '.' or top_level == '':
         top_level = root
 
     rel_path = os.path.join(root, file)
