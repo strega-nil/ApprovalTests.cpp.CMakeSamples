@@ -74,23 +74,24 @@ jobs:
             cxx-compiler: 'g++-10'
             generator: '"Unix Makefiles"'
 
-          - job-name: 'gcc10 unity'
-            os-version: '18.04'
-            c-compiler: 'gcc-10'
-            cxx-compiler: 'g++-10'
-            generator: '"Unix Makefiles" -DCMAKE_UNITY_BUILD=yes -DCMAKE_UNITY_BUILD_BATCH_SIZE=50'
+# See #4
+#          - job-name: 'gcc10 unity'
+#            os-version: '18.04'
+#            c-compiler: 'gcc-10'
+#            cxx-compiler: 'g++-10'
+#            generator: '"Unix Makefiles" -DCMAKE_UNITY_BUILD=yes -DCMAKE_UNITY_BUILD_BATCH_SIZE=50'
 
-          - job-name: 'gcc10 ninja'
-            os-version: '18.04'
-            c-compiler: 'gcc-10'
-            cxx-compiler: 'g++-10'
-            generator: '"Ninja"'
+#          - job-name: 'gcc10 ninja'
+#            os-version: '18.04'
+#            c-compiler: 'gcc-10'
+#            cxx-compiler: 'g++-10'
+#            generator: '"Ninja"'
 
-          - job-name: 'gcc10 ninja-unity'
-            os-version: '18.04'
-            c-compiler: 'gcc-10'
-            cxx-compiler: 'g++-10'
-            generator: '"Ninja" -DCMAKE_UNITY_BUILD=yes -DCMAKE_UNITY_BUILD_BATCH_SIZE=50'
+#          - job-name: 'gcc10 ninja-unity'
+#            os-version: '18.04'
+#            c-compiler: 'gcc-10'
+#            cxx-compiler: 'g++-10'
+#            generator: '"Ninja" -DCMAKE_UNITY_BUILD=yes -DCMAKE_UNITY_BUILD_BATCH_SIZE=50'
 
     name: Linux ${{ matrix.job-name }}
     env:
@@ -176,10 +177,11 @@ jobs:
             xcode-version: '12.2'
             generator: '"Unix Makefiles"'
 
-          - job-name: xcode-11.7-ninja
-            xcode-version: '11.7'
-            os-version: '10.15'
-            generator: '"Ninja"'
+# See #4
+#          - job-name: xcode-11.7-ninja
+#            xcode-version: '11.7'
+#            os-version: '10.15'
+#            generator: '"Ninja"'
 
     name: macOS ${{ matrix.job-name }}
     env:
@@ -254,9 +256,10 @@ jobs:
             os-version: '2019'
             generator: '"Visual Studio 16 2019"'
 
-          - job-name: VS-2019 (clangcl)
-            os-version: '2019'
-            generator: '"Visual Studio 16 2019" -T "clangcl"'
+# See #4
+#          - job-name: VS-2019 (clangcl)
+#            os-version: '2019'
+#            generator: '"Visual Studio 16 2019" -T "clangcl"'
 
     name: Windows ${{ matrix.job-name }}
     # Need to check out in to shorter directory, to avoid 260-char path-length limit
