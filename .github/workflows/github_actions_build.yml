@@ -311,10 +311,7 @@ jobs:
 
       - name: install boost
         run: |
-          ${boostroot} = "${env:BOOST_ROOT_1_72_0}"
-          echo "BOOST_ROOT=${boostroot}" >> ${env:GITHUB_ENV}
-          echo "BOOST_INCLUDEDIR=${boostroot}\include" >> ${env:GITHUB_ENV}
-          echo "BOOST_LIBRARYDIR=${boostroot}\lib" >> ${env:GITHUB_ENV}
+          conan install boost/1.75.0@ -o boost:header_only=True
 
       - name: Build dev_approvals
         shell: bash
