@@ -80,20 +80,18 @@ add_subdirectory(
         ${CMAKE_CURRENT_BINARY_DIR}/ut_build
 )
 
-if(TARGET boost.ut)
-    if ("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
-        # Turn off some checks off for boost.ut
-        target_compile_options(boost.ut INTERFACE
-                -Wno-c99-extensions # Needed for Boost.ut, at least in v1.1.6
-                -Wno-documentation-unknown-command # unknown command tag name \userguide
-                -Wno-weak-vtables
-                -Wno-comma # See https://github.com/boost-ext/ut/issues/398
-                )
-    endif()
-else()
-    if(TARGET Boost::ut)
-        add_library(boost.ut ALIAS ut)
-    endif()
+if(TARGET Boost::ut)
+    add_library(boost.ut ALIAS ut)
+endif()
+
+if ("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
+    # Turn off some checks off for boost.ut
+    target_compile_options(ut INTERFACE
+            -Wno-c99-extensions # Needed for Boost.ut, at least in v1.1.6
+            -Wno-documentation-unknown-command # unknown command tag name \userguide
+            -Wno-weak-vtables
+            -Wno-comma # See https://github.com/boost-ext/ut/issues/398
+            )
 endif()
 
 # -------------------------------------------------------------------
