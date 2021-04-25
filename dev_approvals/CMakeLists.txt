@@ -52,6 +52,14 @@ add_subdirectory(
 )
 
 # -------------------------------------------------------------------
+# filesystem
+set(CATCH_BUILD_TESTING OFF CACHE BOOL "")
+add_subdirectory(
+        ../filesystem
+        ${CMAKE_CURRENT_BINARY_DIR}/filesystem_build
+)
+
+# -------------------------------------------------------------------
 # fmt
 set(CATCH_BUILD_TESTING OFF CACHE BOOL "")
 add_subdirectory(
