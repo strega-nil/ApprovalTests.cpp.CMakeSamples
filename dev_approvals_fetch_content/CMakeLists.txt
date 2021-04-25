@@ -48,6 +48,10 @@ set(FmtVersion
 set(GoogleTestVersion
         "master")
 
+# Tested with v1.5.4
+set(GulrakFileSystemVersion
+        "master")
+
 # Tested with versions in range: 1.1.7 ... 1.1.8
 set(UtVersion
         "master")
@@ -111,6 +115,7 @@ FetchContent_Declare(fmt
 FetchContent_MakeAvailable(fmt)
 
 # -------------------------------------------------------------------
+# googletest
 message(NOTICE "Fetching googletest...")
 # GoogleTest
 # Prevent GoogleTest from overriding our compiler/linker options
@@ -120,6 +125,16 @@ FetchContent_Declare(googletest
         GIT_REPOSITORY https://github.com/abseil/googletest.git
         GIT_TAG ${GoogleTestVersion})
 FetchContent_MakeAvailable(googletest)
+
+# -------------------------------------------------------------------
+# gulrak's filesystem
+message(NOTICE "Fetching gulrak's filesystem...")
+FetchContent_Declare(
+        filesystem
+        GIT_REPOSITORY  https://github.com/gulrak/filesystem.git
+        GIT_TAG         ${GulrakFileSystemVersion}
+)
+FetchContent_MakeAvailable(filesystem)
 
 # -------------------------------------------------------------------
 # Boost.ut
