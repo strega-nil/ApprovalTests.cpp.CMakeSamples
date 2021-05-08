@@ -18,6 +18,7 @@ include(FetchContent)
 # -------------------------------------------------------------------
 # Program Version Numbers - and/or commit IDs
 
+# TODO Update these notes for sunsetting of bintray
 # Oldest Boost in dl.bintray.com is 1.63.0
 # Tested with versions in range: 1.63.0 ... 1.74.0
 # NOTE: With gcc, and Boost 1.73.0, 1.74.0 and 1.75.0, tests in the following directory
@@ -62,7 +63,7 @@ message(NOTICE "Fetching Boost...")
 string(REPLACE . _ BoostVersionUnderscored ${BoostVersion})
 FetchContent_Declare(
         Boost
-        URL https://dl.bintray.com/boostorg/release/${BoostVersion}/source/boost_${BoostVersionUnderscored}.tar.gz
+        URL https://boostorg.jfrog.io/artifactory/main/release/${BoostVersion}/source/boost_${BoostVersionUnderscored}.tar.gz
 )
 FetchContent_MakeAvailable(Boost)
 # This is needed because there is not a CMakeLists.txt in the Boost download,
