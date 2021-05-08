@@ -43,7 +43,7 @@ set(DocTestVersion
 
 # Tested with versions in range: 6.0.0 ... 7.1.2
 set(FmtVersion
-        "master")
+        "7.1.3")
 
 # Tested with versions in range: release-1.8.0 ... release-1.10.0
 set(GoogleTestVersion
