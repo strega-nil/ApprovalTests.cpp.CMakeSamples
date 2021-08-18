@@ -31,6 +31,12 @@ jobs:
             cxx-compiler: 'clang++-11'
             generator: '"Unix Makefiles"'
 
+          - job-name: 'clang12'
+            os-version: '20.04'
+            c-compiler: 'clang-12'
+            cxx-compiler: 'clang++-12'
+            generator: '"Unix Makefiles"'
+
           - job-name: 'gcc9'
             os-version: '20.04'
             c-compiler: 'gcc-9'
